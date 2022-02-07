@@ -10,7 +10,7 @@ description: "个人博客，公众号：宽客小屋"
 keywords: quant, bing, binglin, qiubinglin, 宽客小屋
 timezone: Asia/Shanghai
 encoding: "utf-8"
-repository: qiubinglin/qiubinglin.github.io
+# repository: qiubinglin/qiubinglin.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
