@@ -27,3 +27,15 @@ $$
 $$
 $\overline{x}$ 便是系统的最小二乘解，它最小化余项 $b - Ax$ 的欧式长度。
 
+***证明***
+对不一致系统，显然 $b$ 不在 $Ax$ 平面上，由最小化余项有 $b - A\overline{x} \perp Ax, x \in R^n$，$\overline{x}$ 是最小二乘解，则
+$$
+    (Ax)^T(b - A\overline{x}) = 0
+$$
+$$
+    x^T[A^T(b - A\overline{x})] = 0
+$$
+上式对任意 $x \in R^n$ 正确当且仅当 $A^T(b - A\overline{x}) = 0$，整理得
+$$
+    A^T A\overline{x} = A^T b
+$$
