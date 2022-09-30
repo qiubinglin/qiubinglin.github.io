@@ -5,11 +5,7 @@
 
 # 拉格朗日插值
 假设给定 $n$ 个数据点 $(x_1, y_1), (x_2, y_2)...(x_n, y_n)$，则
-
-$$
-    y = \sum_{i=1}^n { y_i \prod_{j=1,j \neq i}^n \frac{x - x_j}{x_i - x_j} }
-$$
-
+$$y = \sum_{i=1}^n { y_i \prod_{j=1,j \neq i}^n \frac{x - x_j}{x_i - x_j} }$$
 是这 $n$ 个点的拉格朗日插值多项式。
 
 # 多项式插值主定理
