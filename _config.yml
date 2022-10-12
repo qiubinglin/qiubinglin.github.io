@@ -56,10 +56,11 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-
+layout: default
+comments: true
 
 # Disqus settings
-disqus_username: qiubinglin
+disqus_username: binglin
 
 # Netease settings
 netease_comment: false
