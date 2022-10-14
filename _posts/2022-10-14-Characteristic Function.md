@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "特征函数"
-date:       2022-02-13 13:32:00
+date:       2022-10-14 14:50:00
 author:     "Bing"
 catalog: true
 tags:
