@@ -17,7 +17,7 @@ tags:
 置于速度场 $\vec{v}$ 中的曲面 $\varphi$，初始时刻下 $\varphi = \varphi_0$，那么曲面 $\phi$ 如何随着时间 $t$ 演变？
 
 ## 在高维中简化问题
-![avatar](../img/post/1920px-Level_set_method.png)
+![](/img/post/1920px-Level_set_method.png)
 
 若把时间 $t$ 也看作描述曲面的一个维度，那么曲面可以表述为
 $$
