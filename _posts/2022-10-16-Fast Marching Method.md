@@ -2,7 +2,7 @@
 layout:     post
 title:      "Fast Marching Method-快速行进方法"
 subtitle:   "隐去曲面演变的时间项"
-date:       2022-10-09 17:15:00
+date:       2022-10-16 09:59:00
 author:     "Bing"
 catalog: true
 tags:
@@ -29,3 +29,14 @@ $$
 其中 $v$ 是 $T(\vec{x})$ 梯度方向的投影值，此方程称为Eikonal equation，可以通过Fast Marching Method求解。
 
 # Fast Marching Method-快速行进方法
+1、初始化 $T(\vec{x})$：将已知 $T$ 的值的点标注为Alive，邻近Alive点的标注为Close，其余的标注为Far。根据Alive点计算出所有Close点的值。
+
+2、开始循环：从Close集合中选出 $T$ 值最小的点，并将其标注成Trial。
+
+3、将Trial点邻近的所有非Alive点标注为Close，并重新计算这些点的 $T$。
+
+4、将Trial点标注为Alive。
+
+5、回到2继续下一次循环，直至所有点均标注成Alive。
+
+![](/img/post/Schematic-illustration-of-fast-marching-method-1-Finding-the-point-with-the-minimum.png)
