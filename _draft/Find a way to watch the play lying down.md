@@ -19,6 +19,11 @@ Streama是运行在Java环境下的，我们得先安装[JRE 8](https://www.orac
 
 然后去[Streama Release](https://github.com/streamaserver/streama/releases)下载Streama的jar包。
 
-执行jar包，我们的Streama Server就运行起来了。可以看到，Server服务在192.168.0.106:8080上。
+执行jar包，我们的Streama Server就运行起来了。可以看到，Server默认服务在http://localhost:8080上。
 
-访问服务器网址，
+访问并登录。
+
+接下来设置**Base Url**，修改成终端可访问的Url地址。
+
+然后设置**Local Video Files**目录，即本地储存影片资源的目录。
+
