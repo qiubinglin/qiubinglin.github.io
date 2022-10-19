@@ -19,11 +19,26 @@ Streama是运行在Java环境下的，我们得先安装[JRE 8](https://www.orac
 
 然后去[Streama Release](https://github.com/streamaserver/streama/releases)下载Streama的jar包。
 
-执行jar包，我们的Streama Server就运行起来了。可以看到，Server默认服务在http://localhost:8080上。
+执行jar包，我们的Streama Server就运行起来了。Server默认服务在http://localhost:8080上。
+```
+java -jar streama-1.10.4.jar
+```
 
 访问并登录。
+![](/img/post/streama-logging-page.PNG)
 
 接下来设置**Base Url**，修改成终端可访问的Url地址。
+![](/img/post/streama-base-url.PNG)
 
 然后设置**Local Video Files**目录，即本地储存影片资源的目录。
+![](/img/post/streama-local-video-files.PNG)
 
+接下来可以开始创建我们剧集了。
+
+然后创建单集视频。
+
+配置本地片源。
+
+手机上看看试试效果。
+
+***大功告成，可以躺着看剧了！***
