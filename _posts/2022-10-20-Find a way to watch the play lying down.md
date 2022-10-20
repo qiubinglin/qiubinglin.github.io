@@ -2,7 +2,7 @@
 layout:     post
 title:      "想办法躺着看片"
 subtitle:   " \"打造我的Netflix\""
-date:       2022-02-08 13:32:00
+date:       2022-10-20 20:59:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -24,21 +24,25 @@ Streama是运行在Java环境下的，我们得先安装[JRE 8](https://www.orac
 java -jar streama-1.10.4.jar
 ```
 
-访问并登录。
+**访问并登录。**
 ![](/img/post/streama-logging-page.PNG)
 
-接下来设置**Base Url**，修改成终端可访问的Url地址。
+**接下来设置**Base Url**，修改成终端可访问的Url地址。**
 ![](/img/post/streama-base-url.PNG)
 
-然后设置**Local Video Files**目录，即本地储存影片资源的目录。
+**然后设置**Local Video Files**目录，即本地储存影片资源的目录。**
 ![](/img/post/streama-local-video-files.PNG)
 
-接下来可以开始创建我们剧集了。
+**接下来可以开始创建我们剧集了。**
+![](/img/post/streama-create-show.PNG)
 
-然后创建单集视频。
+**然后创建单集视频。**
+![](/img/post/streama-create-episode.PNG)
 
-配置本地片源。
+**配置本地片源。**
+![](/img/post/streama-set-local-video.PNG)
 
-手机上看看试试效果。
+**手机上看看试试效果。**
+![](/img/post/streama-this-is-us.jpg)
 
 ***大功告成，可以躺着看剧了！***
