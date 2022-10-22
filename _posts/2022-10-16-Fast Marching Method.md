@@ -6,7 +6,7 @@ date:       2022-10-16 09:59:00
 author:     "Bing"
 catalog: true
 tags:
-    - 数值计算
+    - 数值分析
     - 曲面演变
     - Fast Marching Method
     - 图算法

@@ -6,7 +6,7 @@ date:       2022-10-09 17:15:00
 author:     "Bing"
 catalog: true
 tags:
-    - 数值计算
+    - 数值分析
     - 插值
 ---
 

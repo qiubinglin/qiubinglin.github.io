@@ -5,7 +5,7 @@ date:       2022-10-22 11:34:00
 author:     "Bing"
 catalog: true
 tags:
-    - 数值方法
+    - 数值分析
     - 最小二乘
     - 线性方程组
     - 法线

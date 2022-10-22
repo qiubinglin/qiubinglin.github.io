@@ -6,7 +6,7 @@ date:       2022-10-15 17:11:00
 author:     "Bing"
 catalog: true
 tags:
-    - 数值计算
+    - 数值分析
     - Level Set Method
     - 偏微分
     - 曲面演变

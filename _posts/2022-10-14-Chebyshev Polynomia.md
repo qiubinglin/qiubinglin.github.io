@@ -5,7 +5,7 @@ date:       2022-10-14 10:08:00
 author:     "Bing"
 catalog: true
 tags:
-    - 数值计算
+    - 数值分析
     - 插值
     - 多项式
     - 切比雪夫
