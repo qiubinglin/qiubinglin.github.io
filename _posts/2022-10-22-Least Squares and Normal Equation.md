@@ -1,10 +1,11 @@
 ---
 layout:     post
 title:      "最小二乘与法线方程"
-date:       2022-02-13 13:32:00
+date:       2022-10-22 11:34:00
 author:     "Bing"
 catalog: true
 tags:
+    - 数值方法
     - 最小二乘
     - 线性方程组
     - 法线
