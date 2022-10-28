@@ -3,7 +3,7 @@ layout:     post
 title:      "随机变量及其分布"
 date:       2022-02-13 13:32:00
 author:     "Bing"
-catalog: true
+catalog:    true
 tags:
     - 概率论
     - 随机变量

@@ -3,7 +3,7 @@ layout:     post
 title:      "量化交易系统的结构"
 date:       2022-02-13 13:32:00
 author:     "Bing"
-catalog: true
+catalog:    true
 tags:
     - 量化
     - 交易系统

@@ -3,7 +3,7 @@ layout:     post
 title:      "资产负债表"
 date:       2022-02-13 13:32:00
 author:     "Bing"
-catalog: true
+catalog:    true
 tags:
     - 金融
     - 经济
