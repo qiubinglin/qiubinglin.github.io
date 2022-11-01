@@ -14,13 +14,13 @@ $\delta(x)$ 是广义函数，它被表述为
 $$
     \delta(x) = 
     \begin{cases}
-    \infin, x = 0 \\
+    \infty, x = 0 \\
     0, x \neq 0
     \end{cases}
 $$
 并且有以下积分性质
 $$
-    \int_{-\infin}^{\infin} f(x) \delta(x) dx = f(0)
+    \int_{-\infty}^{\infty} f(x) \delta(x) dx = f(0)
 $$
 
 我们可以用函数序列的方式表示（如正态分布序列的极限）
@@ -31,7 +31,7 @@ $$
 # 性质
 ## 缩放
 $$
-    \int_{-\infin}^{\infin} \delta(\alpha x) dx = \int_{-\infin}^{\infin} \delta(u) \frac{du}{|\alpha|} = \frac{1}{|\alpha|}
+    \int_{-\infty}^{\infty} \delta(\alpha x) dx = \int_{-\infty}^{\infty} \delta(u) \frac{du}{|\alpha|} = \frac{1}{|\alpha|}
 $$
 
 ## 代数性质
@@ -46,7 +46,7 @@ $c$ 是一个常数。
 
 ## 采样
 $$
-    \int_{-\infin}^{\infin} f(t) \delta(t-T) dt = f(T)
+    \int_{-\infty}^{\infty} f(t) \delta(t-T) dt = f(T)
 $$
 
 ## 复合函数

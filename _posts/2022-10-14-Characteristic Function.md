@@ -16,10 +16,10 @@ tags:
 ***定义***
 设随机变量 $X$ 的分布函数是 $F$。我们称复值函数
 $$
-    \psi_{X_n}(t) = E(e^{itX})= \int_{-\infin}^{\infin} {e^{itX}dF(X)} \\
+    \psi_{X_n}(t) = E(e^{itX})= \int_{-\infty}^{\infty} {e^{itX}dF(X)} \\
     = E(cos(tX)) + iE(sin(tX))
 $$
-为随机变量 $X$（或分布 $F$）的特征函数，其中 $t \in (-\infin, \infin)$。
+为随机变量 $X$（或分布 $F$）的特征函数，其中 $t \in (-\infty, \infty)$。
 
 ***唯一性定理***
 特征函数与概率分布相互唯一确定。
@@ -27,7 +27,7 @@ $$
 ***连续性定理***
 设随机变量 $X_n$ 的特征函数是 $\psi_{X_n}(t)$，那么存在随机变量 $X$ 使得 $X_n$ 依分布收敛到 $X$ 的充要条件是对任意 $t \in R$，$\psi_{X_n}(t)$收敛而且
 $$
-    \lim_{t->0}\lim_{n->\infin}\psi_{X_n}(t) = 1
+    \lim_{t->0}\lim_{n->\infty}\psi_{X_n}(t) = 1
 $$
 
 # 拉普拉斯变换
@@ -36,16 +36,16 @@ $$
 $$
     L_x(\theta) = E(e^{-\theta X})
 $$
-为 $X$ 的拉普拉斯变换， $\theta \in [0, \infin)$。
+为 $X$ 的拉普拉斯变换， $\theta \in [0, \infty)$。
 
 ***定理（拉普拉斯变换反演公式）***
-设 $F$ 是 $[0, \infin]$ 上的分布函数，$L_F(\theta)$ 是对应的拉普拉斯变换，那么对 $F$ 的任意连续点 $x$，有
+设 $F$ 是 $[0, \infty]$ 上的分布函数，$L_F(\theta)$ 是对应的拉普拉斯变换，那么对 $F$ 的任意连续点 $x$，有
 $$
-    F(x) = \lim_{n->\infin} \sum_{k=0}^{\lfloor nx \rfloor}\frac{(-1)^k}{k!}n^k L_F^{(k)}(n)
+    F(x) = \lim_{n->\infty} \sum_{k=0}^{\lfloor nx \rfloor}\frac{(-1)^k}{k!}n^k L_F^{(k)}(n)
 $$
 
 ***定理***
-$[0, \infin]$ 上不同的概率分布有不同的拉普拉斯变换。
+$[0, \infty]$ 上不同的概率分布有不同的拉普拉斯变换。
 
 # 概率母函数
 ***定义***
