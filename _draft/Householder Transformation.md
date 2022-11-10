@@ -23,6 +23,19 @@ $$
 
 定义 $v = w - x$，考虑投影矩阵 $P = \frac{v v^T}{v^T v}$，根据下图可以想到 $x - 2Px = w$，令 $H = I - 2P$，验证如下
 $$
-    Hx = x - 2Px = 
+    Hx = x - 2Px = (w - v) - \frac{v v^T}{v^T v}x - \frac{v v^T}{v^T v}w + \frac{v v^T}{v^T v}v = w - \frac{v v^T}{v^T v}(w + x) = w
+$$
+
+***定理***
+令 $x$，$w$ 是向量，$||x||_2 = ||w||_2$，并定义 $v = w - x$，则$H = I - 2v v^T / v^T v$ 是对称正交矩阵，且 $Hx = w$。
+
+# 在QR分解中的应用
+简单来表示就是
+
+![](/img/post/Householder%20Transformation-QR1.PNG)
+![](/img/post/Householder%20Transformation-QR2.PNG)
+![](/img/post/Householder%20Transformation-QR3.PNG)
+$$
+    A = H_1H_2...H_nR = QR
 $$
 
