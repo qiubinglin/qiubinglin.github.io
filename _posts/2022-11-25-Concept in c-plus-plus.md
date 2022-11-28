@@ -22,7 +22,7 @@ Concept是编译器谓词。在泛型编程或模板元编程中使用能够大�
 template <typename T>
 concept Hashable = requeres(T a) {
     { std::hash<T>{}(a) } -> std::convertible_to<std::size_t>; // 即是要求对a做哈希的结果可以转换成std::size_t类型
-}
+};
 ```
 
 **例子2：相等性可比较谓词**
@@ -32,7 +32,7 @@ concept Equality_comparable = requires(T a, U b) {
     // 两条约束
     { a == b } -> bool ;
     { a != b } -> bool ;
-}
+};
 ```
 
 # Concept的使用
