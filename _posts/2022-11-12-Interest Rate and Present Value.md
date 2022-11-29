@@ -22,10 +22,12 @@ tags:
 债券收益流的现值等于当期价值时的利率。
 
 # 如何计算利率
+在以下公式中，$PV$ 是现值（Present Value），$i$ 是利率
 ## 普通贷款（Simple Loan）
 $$
     PV = \frac{CF}{(1+i)^n}
 $$
+其中 $CF$ 是到期兑付贷款时的现金流（Cash Flow）。
 
 ## 固定支付贷款（Fixed-payment Loan）
 $$
@@ -36,6 +38,7 @@ $$
 $$
     PV = \frac{C}{1+i} + \frac{C}{(1+i)^2} +...+ \frac{C}{(1+i)^n} + \frac{F}{(1+i)^n}
 $$
+
 
 ## 永续年金（Perpetuity）
 $$

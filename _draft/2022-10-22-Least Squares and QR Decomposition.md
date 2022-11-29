@@ -35,3 +35,6 @@ $$
 $$
 
 # Gram-Schmidt正交化
+设 $A$ 为 $m \times n$ 的实矩阵，$m \geq n$，相应的Gram-Schmidt正交过程如下。
+
+
