@@ -13,7 +13,7 @@ tags:
 
 在解 $n$ 维大型稀疏线性方程组 $Ax = b$ 时，使用直接求解的方法可能会很慢并且对内存占用很大，这时候就考虑其他的一些近似求解方法。
 
-Krylov子空间方法是一种投影方法，即在 $m(m \ll n)$ 维空间中寻找真解的近似解，它非常适合于求解大型稀疏线性方程组。
+Krylov子空间方法是一种[投影方法](https://qiubinglin.github.io/2022/11/27/Projection-Method-in-Matrix-Computation/)，即在 $m(m \ll n)$ 维空间中寻找真解的近似解，它非常适合于求解大型稀疏线性方程组。
 
 # Krylov子空间
 ## 定义
