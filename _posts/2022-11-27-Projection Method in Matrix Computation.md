@@ -5,7 +5,7 @@ date:       2022-11-27 11:50:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 数值计算
+    - 数值分析
     - 矩阵计算
     - 最小二乘
 ---

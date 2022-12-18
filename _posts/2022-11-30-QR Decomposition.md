@@ -5,7 +5,7 @@ date:       2022-11-30 16:37:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 数值计算
+    - 数值分析
     - 矩阵计算
     - QR分解
     - Gram-Schmidt正交化
