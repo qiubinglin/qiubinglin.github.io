@@ -20,7 +20,7 @@ Concept是编译器谓词。在泛型编程或模板元编程中使用能够大�
 **例子1：可哈希谓词**
 ```
 template <typename T>
-concept Hashable = requeres(T a) {
+concept Hashable = requires(T a) {
     { std::hash<T>{}(a) } -> std::convertible_to<std::size_t>; // 即是要求对a做哈希的结果可以转换成std::size_t类型
 };
 ```
