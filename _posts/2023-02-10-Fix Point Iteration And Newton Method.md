@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "不动点迭代和牛顿方法"
-date:       2022-02-10 15:42:00
+date:       2023-02-10 15:42:00
 author:     "Bing"
 catalog:    true
 tags:
