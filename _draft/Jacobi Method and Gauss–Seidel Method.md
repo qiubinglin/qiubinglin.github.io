@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Jacobi方法与Gauss–Seidel方法"
-date:       2022-12-13 13:24:00
+date:       2023-02-17 16:55:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -43,6 +43,15 @@ $$
     x_0 = 初始向量 \\
     x_{k+1} = D^{-1}(b - Ux_k - Lx_{k+1})
 $$
+整理得
+$$
+    x_{k+1} = -(D + L)^{-1} Ux_k + (D + L)^{-1}b
+$$
 
 # 连续过松弛(SOR)
 连续过松弛(SOR)方法使用Gauss–Seidel方法的求解方向，并使用过松弛加快收敛速度。
+$$
+    x_0 = 初始向量 \\
+    x_{k+1} = (\omega L + D)^{-1} [(1-\omega)Dx_k - \omega Ux_k] + \omega (D + \omega L)^{-1} b
+$$
+$\omega = 1$ 时即为Gauss–Seidel方法。
