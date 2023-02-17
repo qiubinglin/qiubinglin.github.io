@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Jacobi方法与Gauss–Seidel方法"
-date:       2023-02-17 16:55:00
+date:       2023-02-17 16:57:00
 author:     "Bing"
 catalog:    true
 tags:
