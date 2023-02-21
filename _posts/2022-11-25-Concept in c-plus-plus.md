@@ -17,7 +17,7 @@ Concept是编译器谓词。在泛型编程或模板元编程中使用能够大�
 # Concept的定义
 定义Concept和定义普通的模板方式很类似，需要注意的是新引入的关键字 $requires$ 的用法。
 
-**例子1：可哈希谓词**
+**可哈希谓词**
 ```
 template <typename T>
 concept Hashable = requires(T a) {
@@ -25,7 +25,7 @@ concept Hashable = requires(T a) {
 };
 ```
 
-**例子2：相等性可比较谓词**
+**相等性可比较谓词**
 ```
 template <typename T, typename U = T>
 concept Equality_comparable = requires(T a, U b) {
@@ -33,6 +33,20 @@ concept Equality_comparable = requires(T a, U b) {
     { a == b } -> bool ;
     { a != b } -> bool ;
 };
+```
+
+**方法存在性谓词**
+```
+template <typename T>
+concept HasFuncA = requires(T t) {
+    t.FuncA();
+}
+```
+```
+template <typename T>
+concept HasFuncB = requires(T t, int num) {
+    t.FuncB(num);
+}
 ```
 
 # Concept的使用
@@ -55,4 +69,27 @@ void f(T a, U b) {
 Hashable auto f(Hashable auto a) {
     // return some type hashable
 }
+```
+
+**偏特化**
+```
+template <typename T>
+struct HashMap {
+    std::string toHash() const requires Hashable<T> {
+        ...
+    }
+};
+```
+
+```
+template <typename T>
+struct Writer {
+    void WriteAsHash(const std::string &path) requires(Hashable<T> == true) {
+        // hash and write
+    }
+
+    void WriteAsHash(const std::string &path) requires(Hashable<T> == false) {
+        // do nothing
+    }
+};
 ```
