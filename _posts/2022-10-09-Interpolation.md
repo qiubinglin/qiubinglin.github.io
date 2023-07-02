@@ -86,147 +86,18 @@ $$
 $$
 显然由这4个性质可以得到 $3n-3$ 个约束条件解出所有的未知系数。
 
-以下是使用MKL实现三次样条的例子
-```
-#include "mkl.h"
-
-#define NX 100                     /* Size of partition, number of breakpoints */
-#define NSITE 1000                 /* Number of interpolation sites */
-#define SPLINE_ORDER DF_PP_CUBIC   /* A cubic spline to construct */
-
-int main()
-{
-    int status;          /* Status of a Data Fitting operation */
-    DFTaskPtr task;      /* Data Fitting operations are task based */
-
-    /* Parameters describing the partition */
-    MKL_INT nx;          /* The size of partition x */
-    double x[NX];         /* Partition x */
-    MKL_INT xhint;       /* Additional information about the structure of breakpoints */
-
-    /* Parameters describing the function */
-    MKL_INT ny;          /* Function dimension */
-    double y[NX];         /* Function values at the breakpoints */
-    MKL_INT yhint;       /* Additional information about the function */
-    
-    /* Parameters describing the spline */
-    MKL_INT  s_order;    /* Spline order */
-    MKL_INT  s_type;     /* Spline type */
-    MKL_INT  ic_type;    /* Type of internal conditions */
-    double* ic;         /* Array of internal conditions */
-    MKL_INT  bc_type;    /* Type of boundary conditions */
-    double* bc;         /* Array of boundary conditions */
-
-    double scoeff[(NX-1)* SPLINE_ORDER];   /* Array of spline coefficients */
-    MKL_INT scoeffhint;            /* Additional information about the coefficients */
-
-    /* Parameters describing interpolation computations */
-    MKL_INT nsite;        /* Number of interpolation sites */
-    double site[NSITE];   /* Array of interpolation sites */
-    MKL_INT sitehint;     /* Additional information about the structure of 
-                             interpolation sites */
-
-    MKL_INT ndorder, dorder;    /* Parameters defining the type of interpolation */
-
-    double* datahint;   /* Additional information on partition and interpolation sites */
-
-    double r[NSITE];    /* Array of interpolation results */
-    MKL_INT rhint;     /* Additional information on the structure of the results */
-    MKL_INT* cell;      /* Array of cell indices */
-
-    /* Initialize the partition */
-    nx = NX;
-
-    /* Set values of partition x */
-    ...
-    xhint = DF_NON_UNIFORM_PARTITION;  /* The partition is non-uniform. */
-
-    /* Initialize the function */
-     ny = 1;               /* The function is scalar. */
-     
-    /* Set function values */
-    ...
-    yhint = DF_NO_HINT;    /* No additional information about the function is provided. */
-
-    /* Create a Data Fitting task */
-    status = dfdNewTask1D( &task, nx, x, xhint, ny, y, yhint );
-
-    /* Check the Data Fitting operation status */
-    ...
-
-    /* Initialize spline parameters */
-    s_order = DF_PP_CUBIC;     /* Spline is of the fourth order (cubic spline). */ 
-    s_type = DF_PP_BESSEL;     /* Spline is of the Bessel cubic type. */ 
-
-    /* Define internal conditions for cubic spline construction (none in this example) */
-    ic_type = DF_NO_IC; 
-    ic = NULL;
-
-    /* Use not-a-knot boundary conditions. In this case, the is first and the last 
-     interior breakpoints are inactive, no additional values are provided. */
-    bc_type = DF_BC_NOT_A_KNOT; 
-    bc = NULL;
-    scoeffhint = DF_NO_HINT;    /* No additional information about the spline. */ 
-
-    /* Set spline parameters  in the Data Fitting task */
-    status = dfdEditPPSpline1D( task, s_order, s_type, bc_type, bc, ic_type,
-                                ic, scoeff, scoeffhint );
-    
-    /* Check the Data Fitting operation status */
-    ...
-
-    /* Use a standard method to construct a cubic Bessel spline: */
-    /* Pi(x) = ci,0 + ci,1(x - xi) + ci,2(x - xi)2 + ci,3(x - xi)3, */
-    /* The library packs spline coefficients to array scoeff: */
-    /* scoeff[4*i+0] = ci,0, scoef[4*i+1] = ci,1,         */   
-    /* scoeff[4*i+2] = ci,2, scoef[4*i+1] = ci,3,         */   
-    /* i=0,...,N-2  */
-    status = dfdConstruct1D( task, DF_PP_SPLINE, DF_METHOD_STD );
-
-    /* Check the Data Fitting operation status */
-    ...
-
-    /* Initialize interpolation parameters */
-    nsite = NSITE;
-
-    /* Set site values */
-    ...
-
-    sitehint = DF_NON_UNIFORM_PARTITION; /* Partition of sites is non-uniform */
-
-    /* Request to compute spline values */
-    ndorder = 1;
-    dorder = 1;
-    datahint = DF_NO_APRIORI_INFO;  /* No additional information about breakpoints or
-                                       sites is provided. */
-    rhint = DF_MATRIX_STORAGE_ROWS; /* The library packs interpolation results 
-                                       in row-major format. */
-    cell = NULL;                    /* Cell indices are not required. */
-
-    /* Solve interpolation problem using the default method: compute the spline values
-       at the points site(i), i=0,..., nsite-1 and place the results to array r */ 
-    status = dfdInterpolate1D( task, DF_INTERP, DF_METHOD_STD, nsite, site,
-    sitehint, ndorder, &dorder, datahint, r, rhint, cell );
- 
-    /* Check Data Fitting operation status */ 
-     ...
-
-    /* De-allocate Data Fitting task resources */
-     status = dfDeleteTask( &task );
-    /* Check Data Fitting operation status */ 
-     ...
-    return 0;
-}
-```
-
 ## 贝塞尔曲线
 考虑两点 $X_1, X_2$，给出一阶贝塞尔曲线公式
 $$
-    X = (1 - k)X_1 + k X_2
+    B_1(X_1, X_2, k) = (1 - k)X_1 + k X_2
 $$
-三点
+三点 $X_1, X_2, X_3$，给出二阶贝塞尔曲线公式
 $$
-    
+    B_2(X_1, X_2, X_3, k) = (1 - k)B_1(X_1, X_2, k) + k B_1(X_2, X_3, k)
+$$
+以此类推可以得到 $n$阶贝塞尔曲线公式
+$$
+    B_n(X_1...X_{n+1}, k) = （1-k）B_{n-1}(X_1...X_{n}, k) + k B_{n-1}(X_2...X_{n+1}, k)
 $$
 
 
