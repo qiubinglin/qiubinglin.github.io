@@ -16,7 +16,14 @@ tags:
 
 # 根搜索的敏感性
 ## 根敏感公式
-假设 $r$ 是函数f(x)的根，并且 $r + \Delta r$ 是 $f(x) + \epsilon g(x)$ 的根，则当 $\epsilon \ll f'(x)$ 时
+假设 $r$ 是函数 $f(x)$ 的根，并且 $r + \Delta r$ 是 $f(x) + \epsilon g(x)$ 的根，
+$$
+    f(r + \Delta r) + \epsilon g(r + \Delta r) = 0
+$$
+$$
+    f(r) + f'(r) \Delta r + \epsilon g(r) + \epsilon g'(r) \Delta r + O((\Delta r)^2) = 0
+$$
+忽略 $O((\Delta r)^2)$ 高阶无穷小项，则当 $\epsilon \ll f'(x)$ 时
 $$
     \Delta r = - \frac{\epsilon g(r)}{f'(r)}
 $$
