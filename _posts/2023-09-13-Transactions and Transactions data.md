@@ -104,30 +104,3 @@ $$
 $$
     Cov(X, Y) = E[XY] - E[X]E[Y]
 $$
-
-## 布朗运动(Brownian motion)
-布朗运动在数学上被称为维纳过程(Wiener process)，它有如下4个事实
-1. $W_0 = 0$
-2. $W_t$ 是连续的
-3. 独立增量性，$W_t$ 的增量是独立的
-4. 平稳性，$W_t - W_s \sim N(0, t - s)$ 对于 $0 \leq s < t$
-
-$N(\mu, \sigma^2)$ 是期望为 $\mu$，方差为 $\sigma^2$ 的标准正态分布。
-
-## 几何布朗运动(Geometric Brownian motion)
-随机过程 $S_t$ 是几何布朗运动(GBM)，当它满足以下随机微分方程
-$$
-    dS_t = \mu S_t dt + \sigma S_t dW_t
-$$
-其中 $W_t$ 是维纳过程(Wiener process)或者布朗运动。$\mu$ 是漂移率常数，$\sigma$ 是波动率常数。
-
-## 二次变差(Quadratic Variation)
-设 $X_t$ 是实值随机过程，$t$ 是时间。二次变差 $[X]_t$ 定义为
-$$
-    [X]_t = \lim_{||P||->0} \sum_{k=1}^n (X_{t_k} - X_{t_{k-1}})^2
-$$
-其中 $||P||$ 是对区间 $[0, t]$ 的网格划分单元的二范数，即
-$$
-    t_n - t_0 = t \\
-    (t_k - t_{k-1})^2 = ||P||
-$$
