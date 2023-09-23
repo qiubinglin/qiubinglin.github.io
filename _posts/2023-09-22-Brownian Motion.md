@@ -11,7 +11,7 @@ tags:
 
 # 马尔可夫过程(Markov Process)
 
-# Lévy Process
+# 莱维过程(Lévy Process)
 
 # 维纳过程(Wiener Process)
 布朗运动在数学上被称为维纳过程(Wiener Process)，它具有如下性质
@@ -23,6 +23,14 @@ tags:
 $N(\mu, \sigma^2)$ 是期望为 $\mu$，方差为 $\sigma^2$ 的标准正态分布。
 
 ## 维纳过程的二次变分
+考虑维纳过程在区间 $[0, T]$ 的二次变分，有
+$$
+    \sum_k (W_{t_{k}} - W_{t_{k-1}})^2 = T
+$$
+微分形式则为
+$$
+    (dW_t)^2 = dt
+$$
 
 ## 随机游走(Random Walk)
 在足够的时间尺度下，随机游走近似于布朗运动。
