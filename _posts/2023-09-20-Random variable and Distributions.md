@@ -44,6 +44,10 @@ $$
 
 ## 离散型分布
 ## 连续型分布
+### 正态分布(Normal distribution)
+$$
+    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}
+$$
 
 # 随机过程
 ## 二次变分(Quadratic Variation)
