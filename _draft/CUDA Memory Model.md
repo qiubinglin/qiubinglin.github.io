@@ -34,6 +34,8 @@ CPU提供页锁定内存机制，GPU从页锁定内存中拷贝数据比一般�
 
 ## Mapped Memory
 
+## 内存同步
+
 # CPU与GPU的内存交互
 
 # 虚拟内存(Virtual memory)
