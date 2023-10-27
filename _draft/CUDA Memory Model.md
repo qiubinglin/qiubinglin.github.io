@@ -10,16 +10,21 @@ tags:
     - CUDA
 ---
 
+三层抽象
+
 # Memory Hierarchy
 
-## Register and Local Memory
+## Register
 线程独享内存。
 
+## Local Memory
+线程独享内存，对Global Memory的抽象。
+
 ## L2 Cache
-L2 Cache可以缓存下需要经常使用的数据，相比直接从Global Memory中访问数据，它具有高带宽低延迟的访问优势。
+L2 Cache可以缓存下需要经常使用的数据，相比直接从Global Memory中访问数据，它具有高带宽低延迟的访问优势。所有SMs共享。
 
 ## 共享内存(Shared Memory)
-Shared Memory是一块可以被CUDA Block内所有线程访问的内存。
+Shared Memory是一块可以被CUDA Block内所有线程访问的内存。对L1 Cache的抽象。
 
 ## Distributed Shared Memory
 块集群(Thread Block Cluster)内共享的内存。
