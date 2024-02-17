@@ -11,3 +11,10 @@ tags:
 ---
 
 简单的讲每个CUDA Stream都是一条顺序执行的工作流。
+
+# 同步(Synchronization)
+
+# 主机函数回调
+
+# 流优先级
+

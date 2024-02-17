@@ -11,6 +11,7 @@ tags:
 ---
 
 # Streaming Multiprocessors (SMs)
+一个Thread Block中的Thread会被分配到同一个SMs中处理。
 
 # SIMT(Single-Instruction, Multiple-Thread)架构
 Warp，基本单元，由SM创建、管理、调度和执行。Warp由32个Thread组成，每个Thread有独立的寄存器、算术逻辑单元(ALU)。一个Warp只有一个程序计数器。
