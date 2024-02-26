@@ -5,8 +5,7 @@ date:       2023-09-20 16:03:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 概率论
-    - 随机变量
+    - 随机过程
 ---
 
 # 概率空间(Probability Space)

@@ -6,7 +6,6 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 数的表示与计算
 ---
 
 # 多项式求值

@@ -5,7 +5,7 @@ date:       2023-07-07 17:33:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 数值分析
+    - 随机过程
 ---
 
 Monte Carlo方法是一种以概率统计理论为指导的数值计算方法。

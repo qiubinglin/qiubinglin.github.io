@@ -6,10 +6,8 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 矩阵计算
-    - 最小二乘
+    - 线性代数
     - 迭代方法
-    - Krylov
 ---
 一些定义参见[Krylov子空间方法](https://qiubinglin.github.io/2022/12/12/Krylov-subspace-method/)
 

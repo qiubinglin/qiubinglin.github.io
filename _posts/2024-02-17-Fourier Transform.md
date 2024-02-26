@@ -5,7 +5,7 @@ date:       2024-02-17 15:03:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 应用数学
+    - 数值分析
     - 信号与系统
 ---
 

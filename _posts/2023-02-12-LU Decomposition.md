@@ -6,8 +6,7 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 矩阵计算
-    - 方程组
+    - 线性代数
 ---
 
 # LU分解

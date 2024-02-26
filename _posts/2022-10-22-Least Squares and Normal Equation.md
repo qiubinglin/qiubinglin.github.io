@@ -6,9 +6,8 @@ author:     "Bing"
 catalog: true
 tags:
     - 数值分析
-    - 最小二乘
-    - 线性方程组
-    - 法线
+    - 优化
+    - 线性代数
 ---
 # 不一致系统
 对于 $Ax = b$，其中 $A$ 为 $m \times n$ 阶矩阵，$x \in R^n, b \in R^m$。令 $A = [A_1,...,A_n]$，则有

@@ -6,8 +6,6 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 方程求解
-    - 误差分析
 ---
 
 # 前向误差与后向误差

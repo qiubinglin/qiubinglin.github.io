@@ -5,7 +5,6 @@ date:       2023-09-22 17:42:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 随机分析
     - 随机过程
 ---
 

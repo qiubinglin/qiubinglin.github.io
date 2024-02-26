@@ -6,9 +6,7 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 矩阵计算
-    - QR分解
-    - Gram-Schmidt正交化
+    - 线性代数
 ---
 # 什么是QR分解
 ## 方阵

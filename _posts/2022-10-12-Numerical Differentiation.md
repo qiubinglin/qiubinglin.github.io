@@ -6,9 +6,7 @@ author:     "Bing"
 catalog: true
 tags:
     - 数值分析
-    - 微分
     - 微积分
-    - 差分
 ---
 # 有限差分公式
 ## 二点前向差分公式

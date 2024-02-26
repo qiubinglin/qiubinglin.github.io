@@ -6,8 +6,7 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 矩阵计算
-    - 最小二乘
+    - 线性代数
     - 迭代方法
 ---
 

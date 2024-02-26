@@ -6,7 +6,6 @@ author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
-    - 方程求解
 ---
 
 # 不动点迭代

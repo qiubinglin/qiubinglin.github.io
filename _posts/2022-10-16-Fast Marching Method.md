@@ -7,7 +7,6 @@ author:     "Bing"
 catalog: true
 tags:
     - 数值分析
-    - 曲面演变
     - Fast Marching Method
     - 图算法
     - Dijkstra algorithm

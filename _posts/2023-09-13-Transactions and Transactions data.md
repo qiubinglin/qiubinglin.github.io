@@ -6,7 +6,6 @@ author:     "Bing"
 catalog:    true
 tags:
     - 金融
-    - 交易
 ---
 
 # Limit order book(LOB)

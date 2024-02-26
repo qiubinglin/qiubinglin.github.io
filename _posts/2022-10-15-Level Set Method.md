@@ -8,9 +8,6 @@ catalog: true
 tags:
     - 数值分析
     - Level Set Method
-    - 偏微分
-    - 曲面演变
-    - 水平集方法
 ---
 
 # 曲面演变问题

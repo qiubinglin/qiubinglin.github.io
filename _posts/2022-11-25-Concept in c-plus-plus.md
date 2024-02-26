@@ -8,7 +8,6 @@ catalog:    true
 tags:
     - 编程
     - C++
-    - C++20概念
 ---
 
 # Concept是什么
