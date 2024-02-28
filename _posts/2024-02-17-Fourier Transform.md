@@ -71,7 +71,7 @@ $$
 
 ***傅里叶变换***
 $$
-    F(\omega) = \int_{T} f(t) e^{-i \omega t} dt
+    F(\omega) = \int_{T} f(t) e^{-i \omega t} dt = \int_{-\infty}^{\infty} f(t) e^{-i \omega t} dt
 $$
 
 ***傅里叶逆变换***
@@ -80,31 +80,54 @@ $$
 $$
 
 # 离散傅里叶变换(DFT)
-设 $f(t)$ 在 $[0, (N-1)T]$ 内有 $N$ 个等间距采样点 $f[0],f[1]...f[N-1]$，$f[k] = f(t_k)$，则 $f(t)$ 可以看成
+给定函数 $f(t)$ ，其中 $x \in (-\infty, \infty)$，有 $N$ 个等间距采样点 $t_0,t_1...t_{N-1}$，$\Delta t = t_{m+1} - t_m$，那么傅里叶变换可以近似成
 $$
-    f(t) = f(t) \sum_{k=0}^{N-1} \delta(t - t_k)
-$$
-
-傅里叶变换
-$$
-    F(\omega) = \int_{0}^{(N-1)T} f(t) e^{-i \omega t} dt
-    \\
-    = f[0]e^{-i0} + f[1]e^{-i \omega T} + ... + f[N-1]e^{-i \omega (N-1) T}
-    \\
-    = \sum_{k=0}^{N-1} f[k]e^{-i \omega k T}
+    F(\omega) = \Delta t \sum_{k=0}^{N-1} f(t_k) e^{-i \omega t_m}
 $$
 
 取
 $$
-    \omega = 0, \frac{2\pi}{NT}, \frac{2\pi}{NT} \times 2, ..., \frac{2\pi}{NT} \times (N-1)
+    \omega_n = \frac{2\pi n}{N\Delta t}, n \in [0, N-1]
+$$
+那么
+$$
+    F(\omega_n) = \Delta t \sum_{k=0}^{N-1} f(t_k) e^{-i \frac{2\pi n}{N\Delta t} (t_0 + k\Delta t)}
+    \\
+    = \Delta t e^{-i \frac{2\pi n}{N\Delta t}} \sum_{k=0}^{N-1} f(t_k) e^{-i \frac{2\pi}{N} nk}
 $$
 
-得到 ***离散傅里叶变换***
+综上
+
+***离散傅里叶变换(DFT)***
 $$
     F[n] = \sum_{k=0}^{N-1} f[k]e^{-i \frac{2\pi}{N} nk}
 $$
 
-***离散傅里叶逆变换***
+DFT写成矩阵形式
+$$
+    \begin{pmatrix}
+        F[0] \\
+        F[1] \\
+        F[2] \\
+        .... \\
+        F[N-1] \\
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 1 & 1 & 1 & .... & 1 \\
+        1 & W & W^2 & W^3 & .... & W^{N-1} \\
+        1 & W^2 & W^4 & W^6 & .... & W^{2 (N-1)} \\
+        1 & W^3 & W^6 & W^9 & .... & W^{3 (N-1)} \\
+        .... & .... & .... & .... & .... & .... \\
+        1 & W^{N-1} & W^{2 (N-1)} & W^{3 (N-1)} & .... & W^{(N-1)^2}
+    \end{pmatrix} = \begin{pmatrix}
+        f[0] \\
+        f[1] \\
+        f[2] \\
+        .... \\
+        f[N-1] \\
+    \end{pmatrix}
+$$
+
+***离散傅里叶逆变换(IDFT)***
 $$
     f[k] = \frac{1}{N} \sum_{n=0}^{N-1} F[n]e^{i \frac{2\pi}{N} nk}
 $$
