@@ -58,5 +58,14 @@ $$
 $$
 
 # ENO Approximation
+The basic idea of ENO approximation is to adaptively avoid including the
+discontinuous cell (i.e., the cell on which the solution is discontinuous) in the
+stencil, if possible.
 
 # WENO Approximation
+The basic idea of WENO approximation is the following: instead of using
+only one of the candidate stencils to form the reconstruction, one uses a con-
+vex combination of all of them.
+
+# References
+[ENO and WENO Schemes](https://www3.nd.edu/~yzhang10/WENO_ENO.pdf)
