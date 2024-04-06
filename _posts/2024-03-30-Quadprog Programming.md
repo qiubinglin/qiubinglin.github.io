@@ -51,3 +51,11 @@ Active set method:
 [https://arxiv.org/pdf/2103.16236.pdf](https://arxiv.org/pdf/2103.16236.pdf)
 
 Interior point method: [https://www.maths.ed.ac.uk/hall/NATCOR_2016/IPMsQP.pdf](https://www.maths.ed.ac.uk/hall/NATCOR_2016/IPMsQP.pdf)
+
+Moore–Penrose inverse: [https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse)
+
+Definite matrix: [https://en.wikipedia.org/wiki/Definite_matrix](https://en.wikipedia.org/wiki/Definite_matrix)
+
+Lagrange multiplier: [https://en.wikipedia.org/wiki/Lagrange_multiplier](https://en.wikipedia.org/wiki/Lagrange_multiplier)
+
+Hessian matrix: [https://en.wikipedia.org/wiki/Hessian_matrix](https://en.wikipedia.org/wiki/Hessian_matrix)
