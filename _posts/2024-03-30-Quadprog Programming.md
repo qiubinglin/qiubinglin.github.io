@@ -50,6 +50,8 @@ Active set method:
 
 [https://arxiv.org/pdf/2103.16236.pdf](https://arxiv.org/pdf/2103.16236.pdf)
 
+[https://escholarship.org/content/qt2sp3173p/qt2sp3173p.pdf?t=ml512r](https://escholarship.org/content/qt2sp3173p/qt2sp3173p.pdf?t=ml512r)
+
 Interior point method: [https://www.maths.ed.ac.uk/hall/NATCOR_2016/IPMsQP.pdf](https://www.maths.ed.ac.uk/hall/NATCOR_2016/IPMsQP.pdf)
 
 Moore–Penrose inverse: [https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse)
@@ -59,3 +61,15 @@ Definite matrix: [https://en.wikipedia.org/wiki/Definite_matrix](https://en.wiki
 Lagrange multiplier: [https://en.wikipedia.org/wiki/Lagrange_multiplier](https://en.wikipedia.org/wiki/Lagrange_multiplier)
 
 Hessian matrix: [https://en.wikipedia.org/wiki/Hessian_matrix](https://en.wikipedia.org/wiki/Hessian_matrix)
+
+[https://math.okstate.edu/people/lebl/osu4013-s17/hessian.pdf](https://math.okstate.edu/people/lebl/osu4013-s17/hessian.pdf)
+
+Newton–Raphson method: [https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization)
+
+KKT conditions: [https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)
+
+Saddle point: [https://en.wikipedia.org/wiki/Saddle_point](https://en.wikipedia.org/wiki/Saddle_point)
+
+Dual space: [https://en.wikipedia.org/wiki/Dual_space](https://en.wikipedia.org/wiki/Dual_space)
+
+[https://www.zhihu.com/question/38464481](https://www.zhihu.com/question/38464481)
