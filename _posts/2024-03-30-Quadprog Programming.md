@@ -69,7 +69,3 @@ Newton–Raphson method: [https://en.wikipedia.org/wiki/Newton%27s_method_in_opt
 KKT conditions: [https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)
 
 Saddle point: [https://en.wikipedia.org/wiki/Saddle_point](https://en.wikipedia.org/wiki/Saddle_point)
-
-Dual space: [https://en.wikipedia.org/wiki/Dual_space](https://en.wikipedia.org/wiki/Dual_space)
-
-[https://www.zhihu.com/question/38464481](https://www.zhihu.com/question/38464481)
