@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Fourier Transform"
-date:       2024-02-17 15:03:00
+date:       2023-10-09 15:03:00
 author:     "Bing"
 catalog:    true
 tags:

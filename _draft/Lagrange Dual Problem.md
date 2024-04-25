@@ -15,6 +15,8 @@ tags:
 # KKT conditions
 
 # References
+Lagrange multiplier: [https://en.wikipedia.org/wiki/Lagrange_multiplier](https://en.wikipedia.org/wiki/Lagrange_multiplier)
+
 [https://en.wikipedia.org/wiki/Duality_(optimization)](https://en.wikipedia.org/wiki/Duality_(optimization))
 
 [https://people.eecs.berkeley.edu/~elghaoui/Teaching/EE227A/lecture7.pdf](https://people.eecs.berkeley.edu/~elghaoui/Teaching/EE227A/lecture7.pdf)

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Quadprog Programming"
-date:       2024-03-30 08:47:00
+date:       2024-04-25 16:42:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -57,8 +57,6 @@ Interior point method: [https://www.maths.ed.ac.uk/hall/NATCOR_2016/IPMsQP.pdf](
 Moore–Penrose inverse: [https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse)
 
 Definite matrix: [https://en.wikipedia.org/wiki/Definite_matrix](https://en.wikipedia.org/wiki/Definite_matrix)
-
-Lagrange multiplier: [https://en.wikipedia.org/wiki/Lagrange_multiplier](https://en.wikipedia.org/wiki/Lagrange_multiplier)
 
 Hessian matrix: [https://en.wikipedia.org/wiki/Hessian_matrix](https://en.wikipedia.org/wiki/Hessian_matrix)
 
