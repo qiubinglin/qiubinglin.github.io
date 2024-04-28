@@ -1,13 +1,12 @@
 ---
 layout:     post
-title:      "CUDA SIMT"
+title:      "CUDA Programming Model"
 date:       2023-02-12 10:48:00
 author:     "Bing"
 catalog:    true
 tags:
-    - 计算机架构
-    - CPU
-    - 内存
+    - GPU
+    - CUDA
 ---
 
 # Streaming Multiprocessors (SMs)
