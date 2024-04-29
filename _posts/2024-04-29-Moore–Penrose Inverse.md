@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Moore–Penrose Inverse"
-date:       2024-04-29 14:20:00
+date:       2024-04-29 10:04:00
 author:     "Bing"
 catalog:    true
 tags:
