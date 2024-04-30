@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Lagrange Multiplier"
-date:       2023-02-12 10:48:00
+date:       2024-04-30 17:38:00
 author:     "Bing"
 catalog:    true
 tags:

@@ -9,6 +9,12 @@ tags:
 ---
 
 # Primal problem
+Consider a possibly non-convex optimization problem $p^*$
+$$
+    min \quad f(x)
+    \\
+    subjects \; to \quad g_i(x) \leq 0
+$$
 
 # Dual problem
 
