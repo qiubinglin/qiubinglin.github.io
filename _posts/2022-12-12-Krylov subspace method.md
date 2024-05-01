@@ -84,3 +84,6 @@ $$
 即 $K_k$ 是 $A$ 的一个不变子空间。
 
 以上这些性质既可以通过Arnoldi过程直接推导出，也可以利用QR分解的性质证明。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 4.

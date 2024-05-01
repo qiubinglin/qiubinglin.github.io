@@ -33,3 +33,8 @@ $$
 其中 $d$ 是 $\vec{x}$ 到曲面的距离，通常规定曲面的内部为负，外部为正，因此又称为符号距离函数。
 
 $\varphi$ 称为Level Set函数，对应 $\varphi = 0$ 曲面即是零水平集。这一求解曲面演变问题的方法即被称为Level Set Method-水平集方法。
+
+# References
+Stanley Osher, Ronald Fedkiw. Level Set Methods and Dynamic Implicit Surfaces.
+
+J.A. Sethian. Level Set Methods and Fast Marching Methods.

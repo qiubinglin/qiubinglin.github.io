@@ -46,3 +46,6 @@ $$
 
 ***定理***
 令置换矩阵 $P$ 是单位矩阵经过一组行交换操作后的结果，那么 $PA$ 等于对矩阵 $A$ 做一组相同操作后的结果。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 2.

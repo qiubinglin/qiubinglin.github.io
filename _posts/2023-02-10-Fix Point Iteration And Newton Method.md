@@ -47,3 +47,6 @@ $$
     \lim_{i->\infty} \frac{e_{i+1}}{e_i} = S
 $$
 其中 $S=(m-1)/m$。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 1.

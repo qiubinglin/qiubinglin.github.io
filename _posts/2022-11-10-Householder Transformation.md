@@ -38,3 +38,5 @@ $$
     A = H_1H_2...H_nR = QR
 $$
 
+# References
+[https://en.wikipedia.org/wiki/Householder_transformation](https://en.wikipedia.org/wiki/Householder_transformation)

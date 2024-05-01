@@ -39,3 +39,6 @@ $$
 $$
     A^T A\overline{x} = A^T b
 $$
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 4.

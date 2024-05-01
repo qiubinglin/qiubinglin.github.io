@@ -26,3 +26,6 @@ $$
     \Delta r = - \frac{\epsilon g(r)}{f'(r)}
 $$
 其中 $\epsilon$ 即是误差放大因子。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 1.

@@ -85,3 +85,6 @@ $$
 $$
 
 ## 伪代码
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 4.

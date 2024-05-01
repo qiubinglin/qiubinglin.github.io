@@ -44,3 +44,6 @@ $$
 $$
     Error \propto n^{-1/2}
 $$
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 9.

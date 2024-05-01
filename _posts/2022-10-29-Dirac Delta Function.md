@@ -61,3 +61,6 @@ $$
     \delta(g(x)) = \sum_i \frac{\delta(x - x_i)}{|g'(x_i)|}
 $$
 其中 $x_i$ 是 $g(x)$ 的实根。
+
+# References
+[https://en.wikipedia.org/wiki/Dirac_delta_function](https://en.wikipedia.org/wiki/Dirac_delta_function)

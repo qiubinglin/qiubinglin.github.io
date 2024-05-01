@@ -132,3 +132,12 @@ $$
 $$
     f[k] = \frac{1}{N} \sum_{n=0}^{N-1} F[n]e^{i \frac{2\pi}{N} nk}
 $$
+
+# References
+[https://en.wikipedia.org/wiki/Fourier_transform](https://en.wikipedia.org/wiki/Fourier_transform)
+
+[https://www.robots.ox.ac.uk/~sjrob/Teaching/SP/l7.pdf](https://www.robots.ox.ac.uk/~sjrob/Teaching/SP/l7.pdf)
+
+[https://web.mit.edu/~gari/teaching/6.555/lectures/ch_DFT.pdf](https://web.mit.edu/~gari/teaching/6.555/lectures/ch_DFT.pdf)
+
+[https://phys.libretexts.org/Bookshelves/Mathematical_Physics_and_Pedagogy/Computational_Physics_(Chong)/11%3A_Discrete_Fourier_Transforms/11.01%3A_Conversion_of_Continuous_Fourier_Transform_to_DFT](https://phys.libretexts.org/Bookshelves/Mathematical_Physics_and_Pedagogy/Computational_Physics_(Chong)/11%3A_Discrete_Fourier_Transforms/11.01%3A_Conversion_of_Continuous_Fourier_Transform_to_DFT)

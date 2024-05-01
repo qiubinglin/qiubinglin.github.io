@@ -149,3 +149,6 @@ $$
 
 ## 罗尔定理
 如果函数 $f$ 在 $[a, b]$ 上连续，$(a, b)$ 上可导，且 $f(a) = f(b)$，那么 $(a, b)$ 上存在一点 $\xi(a < \xi < b)$ 使得 $f'(\xi) = 0$。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 3. pp.138-187.

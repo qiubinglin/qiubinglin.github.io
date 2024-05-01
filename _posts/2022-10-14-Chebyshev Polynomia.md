@@ -65,3 +65,6 @@ $$
 $$
     cos(x \pm y) = cosx cosy \mp sinx siny
 $$
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 3.

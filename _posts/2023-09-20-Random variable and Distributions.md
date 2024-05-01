@@ -69,3 +69,8 @@ $$
     \leq \max_{s \in [0,T]} f'(s)^2 \cdot \max_k \{t_k - t_{k-1}\} \cdot T = 0
 $$
 显然其二次变分为零。
+
+# References
+李育强 姚强. 应用随机过程.
+
+[https://en.wikipedia.org/wiki/Quadratic_variation](https://en.wikipedia.org/wiki/Quadratic_variation)

@@ -61,3 +61,6 @@ $$
     x_{k+1} = (\omega L + D)^{-1} [(1-\omega)Dx_k - \omega Ux_k] + \omega (D + \omega L)^{-1} b
 $$
 $\omega = 1$ 时即为Gauss–Seidel方法。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 2.

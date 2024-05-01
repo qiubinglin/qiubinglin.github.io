@@ -56,3 +56,5 @@ $$
 美联储每周会公布一次当周的资产负债表，下图是美联储公布的6月28日至7月6日的资产负债情况：
 ![](/img/post/federal-reserve-balance-sheet-assets.png)
 ![](/img/post/federal-reserve-balance-sheet-liabilities.png)
+
+# References

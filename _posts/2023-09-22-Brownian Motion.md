@@ -62,3 +62,14 @@ $$
 其中 $W_t$ 是维纳过程。$\mu$ 是漂移率常数，$\sigma$ 是波动率常数。
 
 若 $\sigma = 0$，显然 $\mu$ 即是股票的收益率。
+
+# References
+李育强 姚强. 应用随机过程.
+
+[https://en.wikipedia.org/wiki/Markov_chain](https://en.wikipedia.org/wiki/Markov_chain)
+
+[https://en.wikipedia.org/wiki/Wiener_process](https://en.wikipedia.org/wiki/Wiener_process)
+
+[https://en.wikipedia.org/wiki/Geometric_Brownian_motion](https://en.wikipedia.org/wiki/Geometric_Brownian_motion)
+
+[https://zhuanlan.zhihu.com/p/38293827](https://zhuanlan.zhihu.com/p/38293827)

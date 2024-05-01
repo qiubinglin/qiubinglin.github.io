@@ -39,3 +39,6 @@ $$
 5、回到2继续下一次循环，直至所有点均标注成Alive。
 
 ![](/img/post/Schematic-illustration-of-fast-marching-method-1-Finding-the-point-with-the-minimum.png)
+
+# References
+J.A. Sethian. Level Set Methods and Fast Marching Methods.

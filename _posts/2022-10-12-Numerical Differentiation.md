@@ -67,3 +67,6 @@ $f$ 是区间 $[a, b]$ 上的连续函数，令${x_1, x_2 ... x_n}$ 是区间 $[
 $$
     (a_1 + a_2 + ... + a_n)f(c) = a_1f(x_1) + a_2f(x_2) + ... +  a_nf(x_n)
 $$
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 5.

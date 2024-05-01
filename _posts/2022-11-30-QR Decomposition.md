@@ -74,3 +74,6 @@ $$
 $$
 
 于是我们完成了对 $A$ 的Gram-Schmidt正交化，并且得到了 $A$ 的QR分解。显然这个过程也是对QR分解命题的证明。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 4.

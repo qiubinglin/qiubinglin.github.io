@@ -58,3 +58,6 @@ $$
 其中 $i$ 是名义利率，$n$ 是复利周期。
 
 实际年利率其实就是考虑了复利带来的增长。
+
+# References
+Mishkin. Institution and Market. Chapter 3.

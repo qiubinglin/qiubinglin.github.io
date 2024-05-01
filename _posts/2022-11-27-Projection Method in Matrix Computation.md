@@ -49,3 +49,6 @@ $$
 (2) $A$ 非奇异且 $L = AK$
 
 则矩阵 $W^TAV$ 非奇异。
+
+# References
+Timothy Sauer. Numerical Analysis. Chapter 4.
