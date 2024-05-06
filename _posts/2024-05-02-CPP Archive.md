@@ -39,7 +39,10 @@ tags:
 ## Universal References
 [Universal References](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
 
-# Tools
+# Libraries
+[boost](https://www.boost.org/)
+
+[pybind11](https://pybind11.readthedocs.io/en/stable/basics.html)
 
 # Books
 [现代C++教程](https://changkun.de/modern-cpp/zh-cn/00-preface/)
