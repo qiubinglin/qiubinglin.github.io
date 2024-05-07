@@ -38,7 +38,7 @@ $$
 $$
 And we can define the Lagrange dual problem as
 $$
-    d^* := \max \; G(\lambda)
+    d^* := \underset{\lambda}{max} \; G(\lambda)
 $$
 
 ***Theorem 1(Weak duality)*** For possibly non-convex problem, weak duality holds: $p^* \geq d^*$.
