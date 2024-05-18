@@ -44,6 +44,10 @@ tags:
 
 [pybind11](https://pybind11.readthedocs.io/en/stable/basics.html)
 
+[Proxy: Next Generation Polymorphism in C++](https://github.com/microsoft/proxy)
+
+[folly](https://github.com/facebook/folly)
+
 # Books
 [现代C++教程](https://changkun.de/modern-cpp/zh-cn/00-preface/)
 

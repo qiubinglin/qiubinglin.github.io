@@ -16,13 +16,6 @@ Thousand of cheap workers are better than one expensive all-rounder.
 # SIMT
 SIMT(single instruction, multiple threads) is the combination of SIMD and multithreading. 
 
-## Warp
-![](/img/post/warp-divergence-example.png)
-
-The multiprocessor creates, manages, schedules, and executes threads in groups of 32 parallel threads called warps. Individual threads composing a warp start together at the same program address, but they have their own instruction address counter and register state and are therefore free to branch and execute independently.
-
-Threads in the same warp always handle a same instruction at a time.
-
 # Architecture
 ![](/img/post/GPU-Hardware.jpg)
 
@@ -45,6 +38,18 @@ Components:
 8. L1 cache.
 9. Tex, designed to handles texture.
 10. RT cores, designed to accelerates ray-traced graphics.
+
+## Execution
+At runtime, a thread block is placed on an SM for execution, enabling all threads in a thread block to communicate and synchronize efficiently.
+
+![](/img/post/utilize-8sm-gpu.png)
+
+## Warp
+![](/img/post/warp-divergence-example.png)
+
+The multiprocessor creates, manages, schedules, and executes threads in groups of 32 parallel threads called warps. Individual threads composing a warp start together at the same program address, but they have their own instruction address counter and register state and are therefore free to branch and execute independently.
+
+Threads in the same warp always handle a same instruction at a time.
 
 ## Memory access
 ![](/img/post/gpu-warp-memory-access1.png)
