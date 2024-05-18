@@ -9,7 +9,25 @@ tags:
     - 线性代数
 ---
 
-# Idea
+# Notation
+$$
+    N^* = (N^T G^{-1} N)^{-1} N^T G^{-1}
+    \\
+    H = G^{-1}(I - NN^*)
+$$
+
+# Properties
+$$
+    HN = 0
+    \\
+    x^T H x \geq 0 \quad x \in R^n
+    \\
+    HGH = G^{-1}(I - NN^*) G G^{-1}(I - NN^*) = H
+    \\
+    N^*GH = N^* G G^{-1}(I - NN^*) = 0
+    \\
+    HH^+ = G^{-1}(I - NN^*) G^{-1}(I - N^+N^{+*}) = H^+
+$$
 
 # Proofs
 
