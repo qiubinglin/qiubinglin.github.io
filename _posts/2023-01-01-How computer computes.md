@@ -81,5 +81,10 @@ $E_2$ 的计算保留了较多的有效数字，因此结果也更加精确。
 
 算术下溢是指计算结果的指数超过计算机的最小指数表示，即指数在负值时的溢出。
 
+## 渐进下溢
+在数值计算中，当生成的正确结果的数量级低于最小正正规数时，就会生成次正规数（而不是返回零），这称为渐进下溢。
+
 # References
 Timothy Sauer. Numerical Analysis. Chapter 0.
+
+[https://docs.oracle.com/cd/E57201_01/html/E57330/z4000ac020515.html#scrolltoc](https://docs.oracle.com/cd/E57201_01/html/E57330/z4000ac020515.html#scrolltoc)
