@@ -34,11 +34,21 @@ tags:
 ## Fold expression
 [Fold expression](https://en.cppreference.com/w/cpp/language/fold)
 
+## Preprocessor
+[https://en.cppreference.com/w/cpp/preprocessor](https://en.cppreference.com/w/cpp/preprocessor)
+
+[https://learn.microsoft.com/zh-cn/cpp/preprocessor/c-cpp-preprocessor-reference?view=msvc-170](https://learn.microsoft.com/zh-cn/cpp/preprocessor/c-cpp-preprocessor-reference?view=msvc-170)
+
 ## Preprocessor Metaprogramming
 [Preprocessor Metaprogramming](http://saadahmad.ca/cc-preprocessor-metaprogramming-2/)
 
 ## Universal References
 [Universal References](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
+
+## Attributes
+[https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html](https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html)
+
+[https://en.cppreference.com/w/cpp/language/attributes](https://en.cppreference.com/w/cpp/language/attributes)
 
 # Libraries
 [boost](https://www.boost.org/)
@@ -56,3 +66,5 @@ tags:
 
 # Websites
 [Complier Explorer](https://godbolt.org/)
+
+[GCC Online Docs](https://gcc.gnu.org/onlinedocs/cpp/)
