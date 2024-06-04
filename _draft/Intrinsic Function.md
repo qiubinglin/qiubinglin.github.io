@@ -11,6 +11,7 @@ tags:
 In computer software, in compiler theory, an intrinsic function, also called built-in function or builtin function, is a function (subroutine) available for use in a given programming language whose implementation is handled specially by the compiler.
 
 # Memory Alignment
+To use SIMD, the memory must be aligned.
 ```
 #include <immintrin.h>
 
@@ -40,3 +41,4 @@ int main() {
 ```
 
 # Compare to Standard Function
+Lower precision but higher performance.

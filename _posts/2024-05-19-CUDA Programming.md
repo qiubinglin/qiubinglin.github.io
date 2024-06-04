@@ -65,8 +65,57 @@ __host__ __device__ int add(int a, int b) {
 
 ``device_add`` can only be called in GPU, ``host_add`` can only be called in CPU, ``add`` can be called both in CPU and GPU.
 
-# Compiling
+# Example
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <cuda_runtime.h>
 
+__global__ void add(int n, float *x, float *y, float *z)
+{
+  int i = blockIdx.x*blockDim.x + threadIdx.x;
+  if (i < n) z[i] = x[i] + y[i];
+}
+
+int main(void)
+{
+  int N = 1<<20;
+  float *x, *y, *z, *d_x, *d_y, *d_z;
+  x = (float*)malloc(N*sizeof(float));
+  y = (float*)malloc(N*sizeof(float));
+  z = (float*)malloc(N*sizeof(float));
+
+  cudaMalloc(&d_x, N*sizeof(float));
+  cudaMalloc(&d_y, N*sizeof(float));
+  cudaMalloc(&d_z, N*sizeof(float));
+
+  for (int i = 0; i < N; i++) {
+        x[i] = rand()*1.0/RAND_MAX;
+        y[i] = rand()*1.0/RAND_MAX;
+  }
+
+  cudaMemcpy(d_x, x, N*sizeof(float), cudaMemcpyHostToDevice);
+  cudaMemcpy(d_y, y, N*sizeof(float), cudaMemcpyHostToDevice);
+
+  add<<<(N+255)/256, 256>>>(N, d_x, d_y, d_z);
+
+  cudaMemcpy(z, d_z, N*sizeof(float), cudaMemcpyDeviceToHost);
+
+  float maxError = 0.0f;
+  for (int i = 0; i < N; i++)
+        maxError = max(maxError, fabs(z[i]-x[i]-y[i]));
+  printf("Max error: %f\n", maxError);
+
+  cudaFree(d_x);
+  cudaFree(d_y);
+  cudaFree(d_z);
+  free(x);
+  free(y);
+  free(z);
+
+  return 0;
+}
+```
 
 # References
 [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#programming-model](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#programming-model)
