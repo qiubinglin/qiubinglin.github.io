@@ -9,6 +9,10 @@ tags:
     - HPC
 ---
 
+# Before profiling
+1. Choose the most suitable algorithm according to the computing capability of device.
+2. Optimize the algorithm.
+
 # CPU consumption
 
 # Cache consumption
