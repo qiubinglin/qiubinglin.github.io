@@ -1,13 +1,16 @@
 ---
 layout:     post
 title:      "GOLDFARB-Quadprog Solving Method"
-date:       2023-02-12 10:48:00
+date:       2024-04-25 10:48:00
 author:     "Bing"
 catalog:    true
 tags:
     - 数值分析
     - 线性代数
 ---
+
+# Basic Idea
+Use Lagrange-Multiplier method and Newton method to determine direction and step when adding every constrain.
 
 # Notation
 $$

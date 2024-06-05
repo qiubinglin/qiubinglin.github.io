@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Quadprog Programming"
-date:       2024-04-25 16:42:00
+date:       2024-04-20 16:42:00
 author:     "Bing"
 catalog:    true
 tags:
