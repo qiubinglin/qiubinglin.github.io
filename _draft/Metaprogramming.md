@@ -31,7 +31,7 @@ template <typename T>
 struct HasX <T, decltype((void) T::x, 0)> : std::true_type { };
 ```
 
-Variadic templates:
+## Variadic templates
 ```
 template <typename Fn, typename std::size_t... I>
 inline constexpr void ExecAtComplie(Fn fn, std::index_sequence<I...>) {

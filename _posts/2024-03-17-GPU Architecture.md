@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "GPU Architecture"
-date:       2024-05-09 16:25:00
+date:       2024-03-17 16:25:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -59,7 +59,7 @@ Threads in the same warp always handle a same instruction at a time.
 A warp can access 128 bytes of continuous and aligned memory, which equals $Warpsize \times 4$, at a time.
 
 ### Latency and Throughput
-Compared to CPU, GPU has higher latency and higher throughput.
+Compared to CPU, GPU has higher latency but higher throughput.
 
 ## Threads switch
 Because of registers redundancy, GPU is able to switch threads by only swiching registers.
