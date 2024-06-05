@@ -10,7 +10,7 @@ tags:
 ---
 
 # Basic Idea
-Use Lagrange-Multiplier method and Newton method to determine direction and step when adding every constrain.
+Use Lagrange-Multiplier method and Newton's method to determine direction and step when adding every constrain.
 
 # Notation
 $$
