@@ -44,6 +44,7 @@ $$
 ***Theorem 1(Weak duality)*** For possibly non-convex problem, weak duality holds: $p^* \geq d^*$.
 
 # KKT conditions
+[https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)
 
 # References
 Lagrange multiplier: [https://en.wikipedia.org/wiki/Lagrange_multiplier](https://en.wikipedia.org/wiki/Lagrange_multiplier)
