@@ -21,10 +21,13 @@ __global__ void VecAdd(float* A, float* B, float* C)
 
 int main()
 {
-    ...
     // Kernel invocation with N threads
     VecAdd<<<1, N>>>(A, B, C);
-    ...
+
+    // Kernel invocation with specified grid dim and block dim.
+    dim3 grid_dim(1, 1, 1);
+    dim3 block_dim(N, 1, 1);
+    VecAdd<<<grid_dim, block_dim>>>(A, B, C);
 }
 ```
 A kernel is defined using ``__global__`` declaration specifier and the number of CUDA threads that execute the kernel for a given kernel call is specified using a ``<<<...>>>`` execution configuration syntax. Each thread that executes the kernel is given a unique thread ID.
