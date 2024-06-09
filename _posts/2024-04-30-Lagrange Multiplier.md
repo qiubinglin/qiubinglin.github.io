@@ -62,7 +62,7 @@ $$
 If $(x_0, \alpha_0)$ is a saddle point of $\mathcal{L}(x, \alpha)$ and $\mu \geq 0$, then $x_0$ is the optimal vector for the optimization problem.
 
 ***(Necessity condition)***
-Suppose that $f(x)$ and $h_i(x)$ are convex and that there exists $x_0$ such that $h_i(x_0) < 0$. Then with an optimal vector $x^*$ for the above problem there is associated a vector $\alpha^*$ satisfying $\mu^* \geq 0$ and $(x^*, \alpha^*)$ is saddle point.
+Suppose that $f(x)$ and $h_i(x)$ are convex and that there exists $x_0$ such that $h_i(x_0) < 0$. Then with an optimal vector $x_t$ for the above problem there is associated a vector $\alpha_t$ satisfying $\mu_t \geq 0$ and $(x_t, \alpha_t)$ is saddle point.
 
 ### Proofs
 

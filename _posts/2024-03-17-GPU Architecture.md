@@ -52,6 +52,11 @@ The multiprocessor creates, manages, schedules, and executes threads in groups o
 Threads in the same warp always handle a same instruction at a time.
 
 ## Memory access
+Global memory instructions support reading or writing words of size equal to 1, 2, 4, 8, or 16 bytes. Any access (via a variable or a pointer) to data residing in global memory compiles to a single global memory instruction if and only if the size of the data type is 1, 2, 4, 8, or 16 bytes and the data is naturally aligned (i.e., its address is a multiple of that size)
+
+Any address of a variable residing in global memory or returned by one of the memory allocation routines from the driver or runtime API is always aligned to at least 256 bytes.
+
+### Warp's Memory access
 ![](/img/post/gpu-warp-memory-access1.png)
 
 ![](/img/post/gpu-warp-memory-access2.png)
@@ -89,3 +94,5 @@ Tensor cores are specially designed to handle deep learning operations.
 [https://www.rastergrid.com/blog/gpu-tech/2021/01/understanding-gpu-caches/](https://www.rastergrid.com/blog/gpu-tech/2021/01/understanding-gpu-caches/)
 
 [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#simt-architecture](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#simt-architecture)
+
+[https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses)
