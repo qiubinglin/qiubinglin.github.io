@@ -40,7 +40,7 @@ Components:
 10. RT cores, designed to accelerates ray-traced graphics.
 
 ## Execution
-At runtime, a thread block is placed on an SM for execution, enabling all threads in a thread block to communicate and synchronize efficiently.
+At runtime, a thread block is placed on a SM for execution, enabling all threads in a thread block to communicate and synchronize efficiently.
 
 ![](/img/post/utilize-8sm-gpu.png)
 
