@@ -52,9 +52,13 @@ The multiprocessor creates, manages, schedules, and executes threads in groups o
 Threads in the same warp always handle a same instruction at a time.
 
 ## Memory access
+### Global memory
 Global memory instructions support reading or writing words of size equal to 1, 2, 4, 8, or 16 bytes. Any access (via a variable or a pointer) to data residing in global memory compiles to a single global memory instruction if and only if the size of the data type is 1, 2, 4, 8, or 16 bytes and the data is naturally aligned (i.e., its address is a multiple of that size)
 
 Any address of a variable residing in global memory or returned by one of the memory allocation routines from the driver or runtime API is always aligned to at least 256 bytes.
+
+### Shared memory
+To achieve high bandwidth, shared memory is divided into equally-sized memory modules, called banks, which can be accessed simultaneously. Any memory read or write request made of n addresses that fall in n distinct memory banks can therefore be serviced simultaneously, yielding an overall bandwidth that is n times as high as the bandwidth of a single module.
 
 ### Warp's Memory access
 ![](/img/post/gpu-warp-memory-access1.png)
