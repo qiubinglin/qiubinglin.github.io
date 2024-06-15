@@ -11,7 +11,7 @@ tags:
 
 # Before profiling
 1. Choose the most suitable algorithm according to the computing capability of device.
-2. Optimize the algorithm.
+2. Optimize the algorithm in time complexity and space complexity.
 
 # CPU consumption
 
