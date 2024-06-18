@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Quadprog Programming"
+title:      "Quadratic Programming"
 date:       2024-04-20 16:42:00
 author:     "Bing"
 catalog:    true
@@ -9,13 +9,13 @@ tags:
 ---
 
 # Definition
-The quadprog qrogramming problem with $n$ variables and $m$ constraints can be formulated follows. Given:
+The quadratic programming problem with $n$ variables and $m$ constraints can be formulated follows. Given:
 1. a real-valued, $n$-dimensional vector $c$,
 2. an $n \times n$ real symmetric matrix $H$,
 3. an $m \times n$ real metrix $A$,
 4. an $m$-dimensional real vector $b$.
 
-The objective of quadprog qrogramming is to find an $n$-dimensional vector $x$, that will
+The objective of quadratic programming is to find an $n$-dimensional vector $x$, that will
 
 $$
    minimize \quad \frac{1}{2} x^T H x + c^T x
@@ -33,11 +33,12 @@ $$
     = \frac{1}{2} x^T (2C^T C) x + (-2C^T d)^T x + d^T d
 $$
 
-Let $H = 2C^T C$ and $c = -2C^T d$, then we get the quadprog fomulation.
+Let $H = 2C^T C$ and $c = -2C^T d$, then we get the quadratic fomulation.
 
-# Active set method
-
-# Interior point method
+# Methods for solving problem
+1. [Active set method](https://web.archive.org/web/20170812011814/http://www.javaquant.net/papers/GoldfarbIdnani.pdf?origin=publication_detail).
+2. Interior point method.
+3. ...
 
 # References
 Wiki: [https://en.wikipedia.org/wiki/Quadratic_programming](https://en.wikipedia.org/wiki/Quadratic_programming)

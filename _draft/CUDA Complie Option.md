@@ -1,16 +1,15 @@
 ---
 layout:     post
-title:      "Complier"
+title:      "CUDA Complie Option"
 date:       2024-05-02 10:52:00
 author:     "Bing"
 catalog:    true
 tags:
     - HPC
+    - CUDA
 ---
 
-# CPU
-
-# GPU
+# Options
 ## Option `--fmad`
 This option enables (disables) the contraction of floating-point multiplies and adds/subtracts into floating-point multiply-add operations (FMAD, FFMA, or DFMA).
 
@@ -35,6 +34,4 @@ Make use of fast math library.
 `--use_fast_math` implies `--ftz=true --prec-div=false --prec-sqrt=false --fmad=true`.
 
 # References
-[https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html](https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html)
-
 [https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#nvcc-command-options](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#nvcc-command-options)

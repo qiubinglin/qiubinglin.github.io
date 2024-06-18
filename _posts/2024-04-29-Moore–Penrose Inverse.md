@@ -45,5 +45,9 @@ $$
     A^+ = A^*(AA^*)^{-1}
 $$
 
+# Existence and uniqueness
+
 # References
+Linear Algebra Done Right. Chapter 3.C
+
 [https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse)
