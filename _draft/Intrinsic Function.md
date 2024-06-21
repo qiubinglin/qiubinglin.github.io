@@ -42,3 +42,6 @@ int main() {
 
 # Compare to Standard Function
 Lower precision but higher performance.
+
+# References
+[https://www.intel.com/content/www/us/en/docs/cpp-compiler/developer-guide-reference/2021-8/intrinsics.html](https://www.intel.com/content/www/us/en/docs/cpp-compiler/developer-guide-reference/2021-8/intrinsics.html)

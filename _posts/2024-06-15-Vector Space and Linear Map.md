@@ -54,5 +54,40 @@ $$
 $$
 Hence, the theorem is proved.
 
+# Linear Map and Matrix
+***Definition Matrix***
+
+An m-by-n matrix $A$ is a rectangular array of elements of $R$ with m rows and n columns
+$$
+    A = \begin{pmatrix}
+        A_{11} ... A_{1n}
+        \\
+        .........
+        \\
+        A_{n1} ... A_{nn}
+    \end{pmatrix}
+$$
+
+***Definition Matrix of a linear map***
+
+Suppose $T \in \mathcal{L}(V, W)$ and $v_1,...,v_n$ is a basis of $V$ and $w_1,...,w_m$ is a basis of $W$, then the matrix of $T$ with respect to these bases is the m-by-n matrix $\mathcal{M}(T)$ whose entries $A_{j,k}$ is defined by
+$$
+    Tv_k = A_{1k}w_1 + ... + A_{ik}w_i + ... + A_{mk}w_m
+$$
+
+***Definition Matrix of a vector***
+
+Suppose $v \in V$ and $v_1,...,v_n$ is a basis of $V$, so $v = a_1v_1 + ... + a_nv_n$
+then the matrix of $v$ is the n-by-1 matrix $\mathcal{M}(v)$
+$$
+    \mathcal{M}(v) = \begin{pmatrix}
+        a_1
+        \\
+        ...
+        \\
+        a_n
+    \end{pmatrix}
+$$
+
 # References
 Linear Algebra Done Right. Chapter 1, 2 and 3.
