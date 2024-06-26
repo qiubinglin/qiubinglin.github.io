@@ -60,6 +60,8 @@ Any address of a variable residing in global memory or returned by one of the me
 ### Shared memory
 To achieve high bandwidth, shared memory is divided into equally-sized memory modules, called banks, which can be accessed simultaneously. Any memory read or write request made of n addresses that fall in n distinct memory banks can therefore be serviced simultaneously, yielding an overall bandwidth that is n times as high as the bandwidth of a single module.
 
+Shared memory has 32 banks that are organized such that successive 32-bit words map to successive banks. Each bank has a bandwidth of 32 bits per clock cycle.
+
 ### Warp's Memory access
 ![](/img/post/gpu-warp-memory-access1.png)
 
@@ -100,3 +102,5 @@ Tensor cores are specially designed to handle deep learning operations.
 [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#simt-architecture](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#simt-architecture)
 
 [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses)
+
+[https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#shared-memory-5-x](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#shared-memory-5-x)
