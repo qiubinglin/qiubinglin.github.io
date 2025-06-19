@@ -21,6 +21,8 @@ Instruction Fetch -> Instruction Decode -> Execute -> Memory access -> Register 
 ### FTQ (Fetch Target Queue)
 FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令” 的信息，而不是指令本身
 
+### Decoder
+
 ### BPU (Branch Prediction Unit)
 预测分支指令跳转方向与目标地址的模块
 #### BTB (Branch Target Buffer)
