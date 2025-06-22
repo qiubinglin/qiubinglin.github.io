@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Black–Scholes模型-期权定价"
-date:       2023-09-23 15:16:00
+date:       2023-09-24 15:16:00
 author:     "Bing"
 catalog:    true
 tags:
