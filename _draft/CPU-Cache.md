@@ -51,3 +51,14 @@ Tag = 剩下的高位地址部分
 ```
 [ Tag bits ][ Index bits ][ Line Offset bits ]
 ```
+
+# Category
+* Write-back Cache 现代主流
+* Write-through Cache
+
+# Replacement Algorithm
+## LRU (Least Recently Used)
+LRU算法的核心思想是：替换掉最长时间没有被访问的缓存行。
+
+## PLRU (Pseudo-LRU)
+PLRU 通过维护一个二叉树状的状态位来近似跟踪哪些缓存行是最近使用的，哪些是较久未使用的。它不严格保证替换绝对最久未使用的行，而是以较低的开销选择一个较长时间未被访问的行进行替换。

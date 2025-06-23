@@ -15,6 +15,11 @@ Instruction Fetch -> Instruction Decode -> Execute -> Memory access -> Register 
 ```
 
 ## More complex
+```
+Fetch -> Decode -> Rename -> Dispatch -> Execute -> Write back -> Commit
+```
+
+## More complex
 
 # Core
 ## Frontend
@@ -23,10 +28,13 @@ FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令”
 
 ### Decoder
 
+### IB (Issue Buffer)
+Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操作数准备就绪后发射到功能单元执行。它是支持乱序执行的关键组件。
+
 ### BPU (Branch Prediction Unit)
 预测分支指令跳转方向与目标地址的模块
 #### BTB (Branch Target Buffer)
-用来预测分支的目标地址（跳到哪）
+存储预测分支的目标地址（跳到哪）
 * In-Cache BTB 是一种将分支跳转信息集成到指令缓存中的优化设计，能够更快、更节省硬件地进行跳转预测，适合对性能和能效有高要求的现代 CPU
 * L1 BTB (Level 1 Branch Target Buffer) L1 BTB 是 CPU 分支预测器中最靠近取指阶段的、延迟最低的 BTB，负责快速预测最近/常见的分支跳转目标地址
 
@@ -83,13 +91,21 @@ Necessary condition:
 2. 写串行化（Write Serialization）所有核心对同一地址的写操作必须有全局一致的顺序（如CPU1写A=1，CPU2写A=2，所有核心必须按相同顺序观察到这些写操作）
 3. 原子性（Atomicity）单个核心的读写操作不能被拆分（如读到的值不能是“半新半旧”）
 
-## System
-### IMSIC (Incoming Message Signaled Interrupt Controller)
+## INTC (Interrupt Controller)
+Include local and external
+
+## IMSIC (Incoming Message Signaled Interrupt Controller)
 One IMSIC per core
 
-### APLIC (Advanced Platform-Level Interrupt Controller)
+## APLIC (Advanced Platform-Level Interrupt Controller)
+外部中断控制器
 
-### PCIe (Peripheral Component Interconnect Express)
+## CLINT (Core Local Interruptor)
+一个具体的INTC的硬件实现，它支持两种类型的中断：
+* Timer interrupt
+* Software interrupt (IPI)
+
+## PCIe (Peripheral Component Interconnect Express)
 
 # Strong Memory Model
 一个线程所做的内存读写操作，在程序中出现的顺序，对其他线程看起来也是按照这个顺序发生的。
