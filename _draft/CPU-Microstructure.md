@@ -16,10 +16,54 @@ Instruction Fetch -> Instruction Decode -> Execute -> Memory access -> Register 
 
 ## More complex
 ```
-Fetch -> Decode -> Rename -> Dispatch -> Execute -> Write back -> Commit
+Fetch -> Decode -> Rename -> Dispatch -> Execute -> Forwarding -> Write back -> Commit
 ```
 
-## More complex
+### Fetch
+* 从指令缓存（I-Cache）中根据 PC（程序计数器）取出指令
+* 同时进行分支预测，预判下一条指令的地址，以提升流水线效率
+* 在超标量处理器中，可能一次 fetch 多条指令（称为“instruction bundle”）
+
+### Decode
+* 将机器指令翻译成微操作（uops），提取出操作数、操作类型、目标寄存器等信息
+* 同时进行依赖分析，初步构建指令之间的依赖图
+* 复杂指令（如 x86 的某些指令）可能会被拆分为多个 uop
+
+### Rename
+* 解决 写后写（WAW） 和 读后写（RAW） 等数据依赖冲突
+* 将逻辑寄存器映射到物理寄存器，打破名字依赖，实现乱序执行的前提
+* 重命名表（Register Alias Table, RAT）是关键的数据结构
+
+### Dispatch
+* 将指令（uop）分发到对应功能单元的等待队列（Issue Queue）
+* 检查指令是否可以进入调度窗口（通常有容量限制）
+
+### Execute
+* 指令实际在功能单元中执行，如 ALU、乘法器、分支判断器等
+* 操作数来自物理寄存器文件或 Forwarding 网络
+* 某些指令（如 memory load/store）在这一步只是发起地址计算
+
+### Forwarding
+* 这是一个辅助阶段，也可视为 Execution 内部机制的一部分
+* 结果直接从执行单元输出，绕过物理寄存器，转发给等待该结果的后续指令，以减少等待周期（消除 RAW hazard）
+
+### Write back
+* 执行结果写入物理寄存器文件中
+* 同时更新“重命名表”，以便后续使用
+* 这并不会立刻提交结果到架构状态，仅对物理状态生效
+
+### Commit
+* 指令顺序提交，更新架构状态（如通用寄存器文件）
+* 若有异常（如缺页、非法指令），此阶段会触发处理机制，撤销未提交指令
+* 利用 Reorder Buffer（ROB）来保持提交的程序顺序一致性（即使之前乱序执行）
+
+# Some Concepts
+## Frontend and Backend
+现代 CPU 的流水线结构可以大致分为 Frontend（前端） 和 Backend（后端） 两部分：
+* Frontend: [Fetch, Decode]
+* Backend: [Rename, Dispatch, Execute, Forwarding, Write back, Commit]
+
+## Core and Uncore
 
 # Core
 ## Frontend
@@ -107,5 +151,10 @@ One IMSIC per core
 
 ## PCIe (Peripheral Component Interconnect Express)
 
-# Strong Memory Model
+# Appendix
+## Strong Memory Model
 一个线程所做的内存读写操作，在程序中出现的顺序，对其他线程看起来也是按照这个顺序发生的。
+
+## Superscalar CPU
+* 超标量处理器能在每个时钟周期中发射多条指令到不同的执行单元中
+* 这些指令之间要满足独立性（没有依赖冲突），由硬件进行调度
