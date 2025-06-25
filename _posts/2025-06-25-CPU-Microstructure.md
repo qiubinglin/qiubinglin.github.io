@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "CPU Microstructure"
-date:       2024-04-15 21:40:00
+date:       2025-06-25 21:40:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -64,62 +64,56 @@ Fetch -> Decode -> Rename -> Dispatch -> Execute -> Forwarding -> Write back -> 
 * Backend: [Rename, Dispatch, Execute, Forwarding, Write back, Commit]
 
 ## Core and Uncore
+一个CPU大致可以分为Core和Uncore两部分。
+* Core 就是我们平常说的“CPU 核心”，即真正执行指令的部分。
+* Uncore 是指不直接参与指令执行的处理器组件，负责整个处理器/多核系统的数据通信、共享和协作。
 
-# Core
-## Frontend
-### FTQ (Fetch Target Queue)
+# Units in Core
+## FTQ (Fetch Target Queue)
 FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令” 的信息，而不是指令本身
 
-### Decoder
+## Decoder
 
-### IB (Issue Buffer)
-Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操作数准备就绪后发射到功能单元执行。它是支持乱序执行的关键组件。
-
-### BPU (Branch Prediction Unit)
+## BPU (Branch Prediction Unit)
 预测分支指令跳转方向与目标地址的模块
-#### BTB (Branch Target Buffer)
+### BTB (Branch Target Buffer)
 存储预测分支的目标地址（跳到哪）
 * In-Cache BTB 是一种将分支跳转信息集成到指令缓存中的优化设计，能够更快、更节省硬件地进行跳转预测，适合对性能和能效有高要求的现代 CPU
 * L1 BTB (Level 1 Branch Target Buffer) L1 BTB 是 CPU 分支预测器中最靠近取指阶段的、延迟最低的 BTB，负责快速预测最近/常见的分支跳转目标地址
 
-#### BIM (Branch History Table)
+### BIM (Branch History Table)
 用来预测是否跳转（跳还是不跳）
-#### RAS (Return Address Stack)
+### RAS (Return Address Stack)
 用来预测函数返回地址（ret 指令）
 
-### TLB (Translation Lookaside Buffer)
-地址转换缓存，它用来加速虚拟地址到物理地址的转换。
-* ITLB (Instruction TLB)
-* DTLB (Data TLB)
-
-### Rename Unit
+## Rename Unit
 将程序中使用的“架构寄存器名（如 x1, x2）”映射成唯一的物理寄存器名（如 p34, p56），以避免因寄存器名冲突导致的假依赖（false dependency）
 
-### Dispatch Unit
+## Dispatch Unit
 将已经重命名（Rename）的指令发送到对应的 Issue Queue（发射队列）中，等待执行
 
-### Issue buffer
-暂存已经解码并重命名的指令，等待操作数准备好后发射（Issue）给执行单元（EXU）执行
+## Issue buffer
+Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操作数准备就绪后发射到功能单元执行。它是支持乱序执行的关键组件。
 
-## Backend
-### ALU
+## ALU
 
-### Reorder buffer
-追踪乱序执行的每条指令，并在结果就绪后，以程序顺序提交（commit）指令的执行结果，以实现乱序执行但顺序提交的架构一致性
-
-## Vector
-### VLSU
+## Vector Unit
 
 ## LSU (Load store unit)
 处理内存访问指令的硬件单元
 
+## Reorder buffer
+追踪乱序执行的每条指令，并在结果就绪后，以程序顺序提交（commit）指令的执行结果，以实现乱序执行但顺序提交的架构一致性
+
 ## MMU (Memory Management Unit)
 负责虚拟地址到物理地址转换（Address Translation）和内存保护的硬件单元
 
-# Uncore
-## NOC (Network on chip)
+## TLB (Translation Lookaside Buffer)
+地址转换缓存，它用来加速虚拟地址到物理地址的转换。
+* ITLB (Instruction TLB)
+* DTLB (Data TLB)
 
-## Cache
+## Local Cache
 ### ICache
 ### DCache
 
@@ -127,7 +121,14 @@ Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操�
 
 ### L2 Cache
 
-### L3 Cache
+# Uncore
+## NOC (Network on chip)
+
+## L3 Cache
+
+## Memory Controller
+
+## Power Management Unit
 
 ### Cache coherence protocol
 Necessary condition:
