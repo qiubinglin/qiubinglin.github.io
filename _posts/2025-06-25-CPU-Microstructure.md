@@ -150,7 +150,12 @@ One IMSIC per core
 * Timer interrupt
 * Software interrupt (IPI)
 
+# Devices
 ## PCIe (Peripheral Component Interconnect Express)
+
+## GPIO
+
+## UART
 
 # Appendix
 ## Strong Memory Model
