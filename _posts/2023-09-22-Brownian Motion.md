@@ -10,49 +10,74 @@ tags:
 
 # 布朗运动(Brown Motion)
 布朗运动在数学上被称为维纳过程(Wiener Process)，它具有如下性质
-1. $W_0 = 0$
-2. $W_t$ 是连续的
-3. 独立增量性，对于不重叠区间 $[s, t]$，随机变量 $W_t - W_s$ 之间是相互独立的，即维纳过程是马尔可夫过程
-4. 平稳性，且 $W_t - W_s \sim N(0, t - s)$ 对于 $0 \leq s < t$
+1. $B_0 = 0$
+2. $B_t$ 是连续的
+3. 独立增量性，对于不重叠区间 $[s, t]$，随机变量 $B_t - B_s$ 之间是相互独立的，即布朗运动是马尔可夫过程
+4. 平稳性，且 $B_t - B_s \sim N(0, t - s)$ 对于 $0 \leq s < t$
 
 $N(\mu, \sigma^2)$ 是期望为 $\mu$，方差为 $\sigma^2$ 的标准正态分布。
 
-## 维纳过程的二次变差(Quadratic Variation)
-维纳过程在区间 $[0, T]$ 连续但却处处不可微，它的二次变差
+## 布朗运动的二次变差(Quadratic Variation)
+布朗运动在区间 $[0, T]$ 连续但却处处不可微，它的二次变差
 $$
-    [W]_t = \sum_k (W_{t_{k}} - W_{t_{k-1}})^2 = T
+    [B]_t = \sum_k (B_{t_{k}} - B_{t_{k-1}})^2 = T
 $$
 微分形式则为
 $$
-    (dW_t)^2 = dt
+    (dB_t)^2 = dt
 $$
 
-## 随机游走(Random Walk)
-在足够的时间尺度下，随机游走近似于布朗运动。
+### 证明
+考虑一个均匀划分 $||D|| = [\frac{(k-1)T}{n}, \frac{kT}{n}]_k$，我们要证明
+$$
+    n \to \infty \Rightarrow P([B]_t \to T) = 1
+$$
+
+令 $X = B_{t_{k}} - B_{t_{k-1}}$，那么 $X \sim N(0, \frac{T}{n})$
+
+先计算 $[B]_t$ 的期望
+$$
+    E(X^2) = Var(X) = \frac{T}{n}
+    \\
+    E([B]_t) = \sum_k E(X_k^2) = T
+$$
+
+再计算 $[B]_t$ 的方差，因为 $X_k$ 是独立增量
+$$
+    Var([B]_t) = \sum_k Var(X_k^2)
+$$
+
+注意，若 $X \sim N(0, \sigma^2)$，所以 $X^2 \sim \sigma^2 \cdot \chi^2(1)$，所以
+$$
+    Var(X^2) = 2 \sigma^4
+    \\
+    Var([B]_t) = 2n \cdot (\frac{T}{n})^2 = \frac{2T^2}{n}
+$$
+
+应用切比雪夫不等式
+$$
+    P(|[B]_t - T| \ge \epsilon) \le \frac{Var([B]_t)}{\epsilon^2} = \frac{2T^2}{n \epsilon^2}
+$$
+右边随着 $n \to \infty$ 趋于 $0$。
 
 ## 几何布朗运动(Geometric Brownian motion)
-考虑给标准布朗运动加上仅与时间相关的漂移项 $\mu t$，以及一个尺度参数 $\sigma$，得到一个带漂移的布朗运动
-$$
-    X_t = \mu t + \sigma B_t \\
-    dX_t = \mu dt + \sigma dB_t
-$$
-其中 $B_t$ 是布朗运动。
-
-显然 $X(T)$ 满足正态分布
-$$
-    X(T) \sim  N(X(0) + \mu, \sigma^2 T)
-$$
-
-### 描述股票价格
-上述模型在描述股价时存在缺陷，因为股价不可能是负的，所以通常用 $X_t$ 描述股票收益率 $dS_t / S_t$，其中 $S_t$ 是股价。
+几何布朗运动（Geometric Brownian Motion, GBM）是金融中最常用于建模股票价格的随机过程。
 
 ***定义*** 随机过程 $S_t$ 是几何布朗运动(GBM)，当它满足以下随机微分方程
 $$
-    dS_t = \mu S_t dt + \sigma S_t dW_t
+    dS_t = \mu S_t dt + \sigma S_t dB_t
 $$
-其中 $W_t$ 是维纳过程。$\mu$ 是漂移率常数，$\sigma$ 是波动率常数。
+其中
+* $dS_t$ 是资产价格
+* $\mu$ 是漂移率常数，代表平均收益率（价格的确定性增长部分）
+* $\sigma$ 是波动率常数，控制价格“抖动”的程度
+* $B_t$ 是布朗运动
 
-若 $\sigma = 0$，显然 $\mu$ 即是股票的收益率。
+资产价格的相对变动
+$$
+    \frac{dS_t}{S_t} = \mu dt + \sigma dB_t
+$$
+令 $X = \frac{dS_t}{S_t}$，$X \sim N(\mu, \sigma^2 dt)$
 
 # Appendix
 ## 马尔可夫过程(Markov Process)
@@ -119,6 +144,13 @@ $$
     \le max_{s\in(0,T)}f(s)^2 \cdot max(t_i - t_{i-1}) \cdot T
 $$
 随着 $||D||$ 的不断细分，$X(t)$ 的二次变差趋于0。
+
+## 随机游走(Random Walk)
+在足够的时间尺度下，随机游走近似于布朗运动。
+
+## 正态分布与卡布分布
+
+## 切比雪夫不等式
 
 # References
 李育强 姚强. 应用随机过程.
