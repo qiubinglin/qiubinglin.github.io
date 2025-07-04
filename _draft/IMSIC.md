@@ -1,0 +1,104 @@
+---
+layout:     post
+title:      "IMSIC"
+date:       2024-04-15 21:40:00
+author:     "Bing"
+catalog:    true
+tags:
+    - CPU
+---
+
+RISC-V 的 IMSIC（Incoming Message Signaled Interrupt Controller）是为了解决高性能中断控制而设计的新一代中断控制器，尤其适用于虚拟化、多核和多租户场景。它是 RISC-V 平台中 MSI（Message Signaled Interrupt）机制的重要组成部分。
+
+# 设计背景与目标
+传统的中断控制器（如 PLIC）存在如下问题：
+* 不支持高效的中断虚拟化（尤其是嵌套虚拟化）
+* 中断路由通常是“拉式”（polling）结构，延迟较大
+* 不支持分布式、多核扩展性
+
+IMSIC 的设计目标是：
+* 支持 MSI-based 中断发送
+* 每个 hart 一个中断控制器实例，分布式部署，适合高并发
+* 提供 低延迟的中断递送
+* 原生支持 中断虚拟化（VS-level）
+* 与 AIA（Advanced Interrupt Architecture）标准兼容
+
+# IMSIC 架构与位置
+每个 hart 都有一个 IMSIC。
+```
++------------------------+
+|  Device / APLIC / PLIC|
++------------------------+
+           |
+           | 通过 MSI 写 IMSIC 的内存映射寄存器
+           v
++---------------------+
+|      IMSIC (per-hart)   |
+|                       |
+| - 控制寄存器           |
+| - 中断 Pending         |
+| - 中断优先级/使能状态   |
++---------------------+
+           |
+           v
+    hart's interrupt wire
+```
+
+# 关键寄存器
+中断寄存器间接访问:
+* miselect, mireg, mtopei
+* siselect, sireg, stopei
+* vsiselect, vsireg, vstopei
+
+以 miselect, mireg, mtopei 为例
+|register|feature|
+|-|-|
+|miselect|指定 IMSIC 内部的寄存器|
+|mireg|读/写 miselect 选定的寄存器内容|
+|mtopei|读取/清除 当前最高优先级可处理中断|
+
+中断传递方式控制：
+* eidelivery
+  * 0 = Interrupt delivery is disabled
+  * 1 = Interrupt delivery from the interrupt file is enabled
+  * 0x40000000 = Interrupt delivery from a PLIC or APLIC is enabled (optional)
+
+中断阈值控制：
+* eithreshold 设置一个 优先级阈值，只有 优先级高于该阈值（即中断 ID 小于 eithreshold 值）的中断才会被传递到 Hart，并在 mip 或 hgeip CSR 中标记为挂起中断。
+
+中断使能与挂起：
+* eie 是否支持传递某中断
+* eip
+
+# IMSIC 的地址映射与 MSI 格式
+## Memory region for an interrupt file
+Each interrupt file in an IMSIC has one or two memory-mapped 32-bit registers for receiving MSI writes. These memory-mapped registers are located within a naturally aligned 4-KiB region (a page) of physical address space that exists for the interrupt file, i.e., one page per interrupt file.
+
+The layout of an interrupt-file’s memory region is:
+
+|offset|size|register name|feature|
+|--|--|--|--|
+|0x000|4bytes|seteipnum_le|Set External Interrupt-Pending bit by Number, Little-Endian|
+|0x000|4bytes|seteipnum_be|Set External Interrupt-Pending bit by Number, Big-Endian|
+
+All other bytes in an interrupt file’s 4-KiB memory region are reserved and must be implemented as read-only zeros.
+
+## 每个 hart 中断文件布局
+主要的两个规则：
+* Machine-level 中断文件连续分布
+* 同一个 hart 的 S-level 中断文件和 Guest-level 中断文件连续分布，以 [S,G(1),G(2)...] 这样的格式。
+
+## MSI 格式
+When RISC-V harts have IMSICs, an MSI from a device is normally sent directly to an individual hart that was selected by software to handle the interrupt (presumably based on some interrupt affinity policy).
+
+The MSI write address is the physical address of a particular word-size register that is physically connected to the target interrupt file. The MSI write data is simply the identity number of the interrupt to be made pending in that interrupt file (becoming eventually the minor identity for an external interrupt to the attached hart).
+
+By configuring an MSI’s address and data at a device, system software fully controls: (a) which hart receives a particular device interrupt, (b) the target privilege level or virtual hart, and (c) the identity number that represents the MSI in the target interrupt file. Elements a and b are determined by which
+interrupt file is targeted by the MSI address, while element c is communicated by the MSI data.
+
+## Interrupt affinity policy 的作用
+系统软件（OS / hypervisor）根据中断亲和性策略，选择合适的 hart，然后把对应的 MSI 地址配置到设备中。
+
+## Major identity 与 Minor identity
+* Major identity 外部中断类型：MEIP / SEIP / VSEIP
+* Minor identity IMSIC 中断文件中具体哪个 ID 引发了中断（哪个 pending bit 触发）
