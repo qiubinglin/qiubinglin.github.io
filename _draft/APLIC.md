@@ -7,7 +7,7 @@ catalog:    true
 tags:
     - CPU
 ---
-APLIC 的主要功能是：
+APLIC(Advanced Platform-Level Interrupt Controller) 的主要功能是：
 1. 管理平台中断源（例如外设的中断）。
 2. 将中断路由到目标 hart（CPU核）或其 IMSIC。
 3. 支持中断的虚拟化与客体（guest）路由。
