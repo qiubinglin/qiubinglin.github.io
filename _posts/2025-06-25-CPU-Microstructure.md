@@ -30,7 +30,7 @@ Fetch -> Decode -> Rename -> Dispatch -> Execute -> Forwarding -> Write back -> 
 * 复杂指令（如 x86 的某些指令）可能会被拆分为多个 uop
 
 ### Rename
-* 解决 写后写（WAW） 和 读后写（RAW） 等数据依赖冲突
+* 解决写后写（WAW）和读后写（RAW）等数据依赖冲突
 * 将逻辑寄存器映射到物理寄存器，打破名字依赖，实现乱序执行的前提
 * 重命名表（Register Alias Table, RAT）是关键的数据结构
 
@@ -73,9 +73,11 @@ Fetch -> Decode -> Rename -> Dispatch -> Execute -> Forwarding -> Write back -> 
 FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令” 的信息，而不是指令本身
 
 ## Decoder
+把取到的机器指令翻译成微操作（micro-ops，简称 uops），为后续的执行阶段做准备。
 
 ## BPU (Branch Prediction Unit)
 预测分支指令跳转方向与目标地址的模块
+
 ### BTB (Branch Target Buffer)
 存储预测分支的目标地址（跳到哪）
 * In-Cache BTB 是一种将分支跳转信息集成到指令缓存中的优化设计，能够更快、更节省硬件地进行跳转预测，适合对性能和能效有高要求的现代 CPU
@@ -83,6 +85,7 @@ FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令”
 
 ### BIM (Branch History Table)
 用来预测是否跳转（跳还是不跳）
+
 ### RAS (Return Address Stack)
 用来预测函数返回地址（ret 指令）
 
@@ -128,13 +131,7 @@ Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操�
 
 ## Memory Controller
 
-## Power Management Unit
-
-### Cache coherence protocol
-Necessary condition:
-1. 写传播（Write Propagation）一个核心的写操作必须最终被其他核心看到
-2. 写串行化（Write Serialization）所有核心对同一地址的写操作必须有全局一致的顺序（如CPU1写A=1，CPU2写A=2，所有核心必须按相同顺序观察到这些写操作）
-3. 原子性（Atomicity）单个核心的读写操作不能被拆分（如读到的值不能是“半新半旧”）
+## PMU (Performance Monitoring Unit)
 
 ## INTC (Interrupt Controller)
 Include local and external
