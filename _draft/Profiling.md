@@ -17,12 +17,12 @@ tags:
 ## 硬件瓶颈指南
 |指标|理论极限|如何评估|
 |-|-|-|
-| CPU 利用率 | 100% 单核/多核 | `perf`, `top`, `htop` |
-| 内存带宽 | 内存控制器最大带宽 | `pcm-memory`, `numastat` |
-| L1/L2/L3 cache miss 率 | 尽量低 | `perf stat`, `cachegrind` |
-| 分支预测命中率 | >95% 理想      | `perf stat -e branch-misses` |
-| 网络 IO | 网卡带宽、包转发速率   | `ethtool`, `pktgen` |
-| 存储 IO | SSD/HDD 理论带宽 | `fio`, `iostat` |
+|CPU 利用率|100% 单核/多核|`perf`, `top`, `htop`|
+|内存带宽|内存控制器最大带宽|`pcm-memory`, `numastat`|
+|L1/L2/L3 cache miss 率|尽量低| `perf stat`, `cachegrind`|
+|分支预测命中率|>95% 理想|`perf stat -e branch-misses`|
+|网络 IO|网卡带宽、包转发速率|`ethtool`, `pktgen`|
+|存储 IO|SSD/HDD 理论带宽|`fio`, `iostat`|
 
 
 # Useful Tools
