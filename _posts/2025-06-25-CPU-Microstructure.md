@@ -63,6 +63,16 @@ Fetch -> Decode -> Rename -> Dispatch -> Execute -> Forwarding -> Write back -> 
 * Frontend: [Fetch, Decode]
 * Backend: [Rename, Dispatch, Execute, Forwarding, Write back, Commit]
 
+Backend 包含的功能单元有：
+* ALU 算术逻辑单元
+* MUL 乘法单元
+* DIV 除法单元
+* BRU 跳转执行
+* CSR 状态控制
+* FPU 浮点计算单元
+* LSU 存取单元
+* VU 向量单元
+
 ## Core and Uncore
 一个CPU大致可以分为Core和Uncore两部分。
 * Core 就是我们平常说的“CPU 核心”，即真正执行指令的部分。
@@ -98,7 +108,15 @@ FTQ 是前端流水线的缓冲器，缓存的是 “我要从哪里取指令”
 ## Issue buffer
 Issue Buffer 是用于暂存和调度待执行指令的硬件结构，等待操作数准备就绪后发射到功能单元执行。它是支持乱序执行的关键组件。
 
-## ALU
+## ALU (Arithmetic Logic Unit)
+ALU 是 CPU 中负责执行整数类算术与逻辑运算的功能单元，是最基础也是最常用的执行单元之一。
+
+它处理如下指令类型：
+* **算术运算**：`add`, `sub`, `addi`, `neg`
+* **逻辑运算**：`and`, `or`, `xor`, `not`
+* **比较判断**：`slt`, `sltu`, `seq`, `sne`（有时交给 BRU）
+* **位移操作**：`sll`, `srl`, `sra`
+* **地址计算**：如 `load/store` 的 base + offset 地址计算（有时交给其它功能单元，但也可由 ALU 做）
 
 ## Vector Unit
 
