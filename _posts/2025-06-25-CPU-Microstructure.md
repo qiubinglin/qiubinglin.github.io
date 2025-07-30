@@ -135,10 +135,8 @@ ALU 是 CPU 中负责执行整数类算术与逻辑运算的功能单元，是�
 * DTLB (Data TLB)
 
 ## Local Cache
-### ICache
-### DCache
-
-### L1 Cache
+### L1 ICache
+### L1 DCache
 
 ### L2 Cache
 
