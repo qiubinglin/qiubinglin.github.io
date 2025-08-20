@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Virtual Memory Area (VMA) - Linux 虚拟内存区域详解"
+title:      "Virtual Memory Area (VMA)"
 date:       2025-08-19 23:00:00
 author:     "Bing"
 catalog:    true
@@ -20,12 +20,12 @@ tags:
 ## 完整的内存空间布局
 Linux 系统中，每个进程都有独立的虚拟地址空间，通常为 4GB（32位）或 128TB（64位）。
 
-![完整内存空间布局](Memory-Space.png)
+![完整内存空间布局](/img/post/Memory-Space.png)
 
 ## 用户空间内存布局
 用户空间通常从地址 0x00000000 开始，包含以下主要区域：
 
-![用户空间内存布局](User-Memory-Space.png)
+![用户空间内存布局](/img/post/User-Memory-Space.png)
 
 - **代码段（Text Segment）**：存放可执行代码
 - **数据段（Data Segment）**：存放全局变量和静态变量
@@ -37,7 +37,7 @@ Linux 系统中，每个进程都有独立的虚拟地址空间，通常为 4GB�
 
 # 内存映射管理架构
 
-![内存管理结构](Memory-Manage-Struct.png)
+![内存管理结构](/img/post/Memory-Manage-Struct.png)
 
 ## task_struct 结构体
 
