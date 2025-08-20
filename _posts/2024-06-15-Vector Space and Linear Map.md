@@ -57,12 +57,6 @@ A **linear map** (or linear transformation) from vector space $V$ to vector spac
 - $T(-v) = -T(v)$ for all $v \in V$
 - $T(a_1v_1 + a_2v_2 + \cdots + a_nv_n) = a_1T(v_1) + a_2T(v_2) + \cdots + a_nT(v_n)$
 
-## Examples of Linear Maps
-
-- **Rotation**: $T: \mathbb{R}^2 \to \mathbb{R}^2$ defined by $T(x,y) = (x\cos\theta - y\sin\theta, x\sin\theta + y\cos\theta)$
-- **Differentiation**: $T: \mathcal{P}_n(\mathbb{R}) \to \mathcal{P}_{n-1}(\mathbb{R})$ defined by $T(p) = p'$
-- **Integration**: $T: \mathcal{C}[a,b] \to \mathbb{R}$ defined by $T(f) = \int_a^b f(x) \, dx$
-
 ---
 
 # Fundamental Theorem of Linear Maps
@@ -70,8 +64,9 @@ A **linear map** (or linear transformation) from vector space $V$ to vector spac
 ## Theorem
 
 Let $V$ be a finite-dimensional vector space and $T \in \mathcal{L}(V, W)$ be a linear map. Then:
-
-$$\dim V = \dim(\ker T) + \dim(\text{range } T)$$
+$$
+\dim V = \dim(\ker T) + \dim(\text{range } T)
+$$
 
 where:
 - $\ker T = \{v \in V : T(v) = 0\}$ is the **kernel** (null space) of $T$
@@ -113,12 +108,14 @@ Therefore, $\dim(\text{range } T) = n$, and the theorem follows.
 
 An **$m \times n$ matrix** $A$ over a field $\mathbb{F}$ is a rectangular array of elements from $\mathbb{F}$:
 
-$$A = \begin{pmatrix}
+$$
+A = \begin{pmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{pmatrix}$$
+\end{pmatrix}
+$$
 
 ### Definition: Matrix of a Linear Map
 
@@ -128,20 +125,24 @@ Let $T \in \mathcal{L}(V, W)$ be a linear map, and let:
 
 The **matrix representation** of $T$ with respect to these bases, denoted $[T]_{\mathcal{B}_V}^{\mathcal{B}_W}$, is the $m \times n$ matrix whose $(i,j)$-entry is defined by:
 
-$$T(v_j) = \sum_{i=1}^m a_{ij} w_i$$
+$$
+T(v_j) = \sum_{i=1}^m a_{ij} w_i
+$$
 
 That is, the $j$-th column of $[T]_{\mathcal{B}_V}^{\mathcal{B}_W}$ contains the coordinates of $T(v_j)$ with respect to the basis $\mathcal{B}_W$.
 
 ### Definition: Matrix of a Vector
 
-Let $v \in V$ and $\mathcal{B}_V = \{v_1, \ldots, v_n\}$ be a basis for $V$. If $v = \sum_{i=1}^n a_i v_i$, then the **coordinate vector** of $v$ with respect to $\mathcal{B}_V$ is:
+Let $v \in V$ and $\mathcal{B}_V=\{v_1, \ldots, v_n\}$ be a basis for $V$. If $v = \sum_{i=1}^n a_i v_i$, then the **coordinate vector** of $v$ with respect to $\mathcal{B}_V$ is:
 
-$$[v]_{\mathcal{B}_V} = \begin{pmatrix}
+$$
+[v]_{\mathcal{B}_V} = \begin{pmatrix}
 a_1 \\
 a_2 \\
 \vdots \\
 a_n
-\end{pmatrix}$$
+\end{pmatrix}
+$$
 
 ## Matrix Operations and Linear Maps
 
@@ -149,13 +150,17 @@ a_n
 
 If $T: V \to W$ and $S: W \to U$ are linear maps, then:
 
-$$[S \circ T]_{\mathcal{B}_V}^{\mathcal{B}_U} = [S]_{\mathcal{B}_W}^{\mathcal{B}_U} \cdot [T]_{\mathcal{B}_V}^{\mathcal{B}_W}$$
+$$
+[S \circ T]_{\mathcal{B}_V}^{\mathcal{B}_U} = [S]_{\mathcal{B}_W}^{\mathcal{B}_U} \cdot [T]_{\mathcal{B}_V}^{\mathcal{B}_W}
+$$
 
 ### Change of Basis
 
 If $\mathcal{B}_V'$ and $\mathcal{B}_W'$ are different bases for $V$ and $W$ respectively, then:
 
-$$[T]_{\mathcal{B}_V'}^{\mathcal{B}_W'} = P_W^{-1} \cdot [T]_{\mathcal{B}_V}^{\mathcal{B}_W} \cdot P_V$$
+$$
+[T]_{\mathcal{B}_V'}^{\mathcal{B}_W'} = P_W^{-1} \cdot [T]_{\mathcal{B}_V}^{\mathcal{B}_W} \cdot P_V
+$$
 
 where $P_V$ and $P_W$ are the change-of-basis matrices.
 
@@ -179,7 +184,9 @@ Let $T: \mathcal{P}_2(\mathbb{R}) \to \mathcal{P}_1(\mathbb{R})$ be the differen
 
 With respect to the bases $\{1, x, x^2\}$ for $\mathcal{P}_2(\mathbb{R})$ and $\{1, x\}$ for $\mathcal{P}_1(\mathbb{R})$:
 
-$$[T] = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 2 \end{pmatrix}$$
+$$
+[T] = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 2 \end{pmatrix}
+$$
 
 ---
 
