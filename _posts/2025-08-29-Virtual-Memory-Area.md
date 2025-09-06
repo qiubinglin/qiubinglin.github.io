@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Virtual Memory Area (VMA)"
-date:       2025-08-19 23:00:00
+date:       2025-08-29 21:40:00
 author:     "Bing"
 catalog:    true
 tags:
@@ -31,7 +31,7 @@ Linux 系统中，每个进程都有独立的虚拟地址空间，通常为 4GB�
 - **数据段（Data Segment）**：存放全局变量和静态变量
 - **BSS 段**：存放未初始化的全局变量
 - **堆（Heap）**：动态分配的内存区域
-- **共享库区域**：映射的共享库
+- **共享库区域**：映射的共享库（Inside 内存映射区）
 - **栈（Stack）**：函数调用栈和局部变量
 - **mmap 区域**：内存映射文件
 
