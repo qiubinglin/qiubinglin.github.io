@@ -2,7 +2,7 @@
 layout:     post
 title:      "片上网络(NoC)：现代多核处理器的通信骨干"
 subtitle:   "Network on Chip: The Communication Backbone of Modern Multi-Core Processors"
-date:       2025-08-31 21:40:00
+date:       2025-09-07 21:40:00
 author:     "Bing"
 catalog:    true
 tags:
